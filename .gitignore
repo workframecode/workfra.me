@@ -1,0 +1,3 @@
+# Ignore captcha related scripts. Contains secret/API keys or tokens.
+recaptcha.php
+recaptcha.js
