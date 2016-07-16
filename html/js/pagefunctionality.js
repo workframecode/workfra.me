@@ -25,6 +25,10 @@ var swapbar=function(fromdefault){
 	});
 }
 
+var startclub=function(){
+	console.log("Scroll to query form with the message field filled out.");
+}
+
 var captchapass=function(){
 	
 }
