@@ -81,13 +81,13 @@ body {
 	background-color: rgba(0,0,0,0.3) !important;
 }
 
-.navbar-nav > li > a {padding-top:25px !important; padding-bottom:20px !important;}
-.navbar {min-height:70px !important}
-
-.navbar-nav {}
+.navbar-nav>li>a{
+	padding-top: 25px; 
+	padding-bottom: 20px;
+}
 
 .navbar-default{
 	background-color: transparent;
 	border-color: transparent;
-	min-height: 50px;
+	min-height: auto;
 }
