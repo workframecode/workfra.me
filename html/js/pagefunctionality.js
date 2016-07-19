@@ -31,11 +31,10 @@ $(document).ready(function(){
 });
 
 var swapbar=function(fromdefault){
-	console.log("debug");
 	if (fromdefault){
 		$('.navbar').animate({
 			backgroundColor: '#ffffff',
-			boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.7)'
+			boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.7)'
 		}, 200);
 		$('.navbar').addClass('navdown');
 	}
