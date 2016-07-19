@@ -13,7 +13,7 @@ $(document).ready(function(){
 				swapbar(false);
 		}
 		
-		if ($(window).scrollTop() >= ($('#wfcontent').offset().top-$('.navbar').height())){
+		if ($(window).scrollTop() >= ($('#wfcontent').offset().top-(2*$('.navbar').height()))){
 			if ($('#logo').css('opacity')=='0'){
 				$('#logo').animate({
 					opacity: '1.0'
