@@ -14,6 +14,7 @@ $(document).ready(function(){
 });
 
 var swapbar=function(fromdefault){
+	console.log("debug");
 	if (fromdefault){
 		$('.navbar').animate({
 			backgroundColor: '#ffffff',
