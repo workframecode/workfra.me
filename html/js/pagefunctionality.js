@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	$(window).bind('scroll', function(){
+		$('#bgbanner').css('margin-top', $(window).scrollTop() * -.3);
+		
 		if ($(window).scrollTop() > 0){
 			if (!$('.navbar').hasClass('navdown'))
 				swapbar(true);
@@ -13,10 +15,10 @@ $(document).ready(function(){
 
 var swapbar=function(fromdefault){
 	if (fromdefault){
-	
+		
 	}
 	else{
-
+		
 	}
 }
 
