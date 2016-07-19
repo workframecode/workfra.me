@@ -41,16 +41,22 @@
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<button type="button" class="navbar-toggle collapsed" onclick="slidesidebar()">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand navlink" href="#"><img id="logo" src="images/banner-monochrome-black.png"></a>
+					<a class="navbar-brand navlink" href="#"><img class="logo" src="images/banner-monochrome-black.png"></a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
+						<li id="sidebartitle">
+							<img class="logo" src="images/banner-monochrome-black.png" />
+							<button type="button" class="navbar-toggle collapsed" id="closesidebar" onclick="hidesidebar()">
+								<span>&#10060;</span>
+							</button>
+						</li>
 						<li class="active"><a href="#" class="navlink">Home</a></li>
 						<li><a href="#about" class="navlink">About</a></li>
 						<li><a href="#activities" class="navlink">Activities</a></li>
