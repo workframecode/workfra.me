@@ -20,16 +20,16 @@ var swapbar=function(fromdefault){
 			backgroundColor: '#ffffff',
 			boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.7)'
 		}, 200, function(){
-			$('.navbar').addClass('navdown');
 		});
+		$('.navbar').addClass('navdown');
 	}
 	else{
 		$('.navbar').animate({
 			backgroundColor: 'transparent',
 			boxShadow: '0 0 0'
 		}, 200, function(){
-			$('.navbar').removeClass('navdown');
 		});
+		$('.navbar').removeClass('navdown');
 	}
 }
 
