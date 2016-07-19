@@ -71,6 +71,22 @@
 		margin-top: -5px;
 	}
 	
+	#navbar{
+		background: #ffffff;
+	}
+	
+	#navbar .navlink{
+		color: #505050 !important;
+	}
+}
+
+@media (min-width: 768px){
+	.navbar-nav{
+		float: none !important;
+		margin: 0 auto;
+		display: table;
+		padding-right: 150px;
+	}
 }
 
 .navdown .navlink{
@@ -84,13 +100,6 @@
 .navlink{
 	color: #e0e0e0 !important;
 	font-weight: bold;
-}
-
-.navbar-nav{
-	float: none !important;
-	margin: 0 auto;
-	display: table;
-	padding-right: 150px;
 }
 
 .navbar-nav>li>a{
