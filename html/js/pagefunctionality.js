@@ -13,9 +13,11 @@ $(document).ready(function(){
 		
 		if ($(window).scrollTop() >= $('#wfcontent').offset().top){
 			$('.navbar-brand').html('<img src="images/banner-monochrome-black.png" height="30" width="150">');
+			$('.navbar-nav').css({'padding-right': '150px'});
 		}
 		else{
 			$('.navbar-brand').html('');
+			$('.navbar-nav').css({'padding-right': '0px'});
 		}
 	});
 });
