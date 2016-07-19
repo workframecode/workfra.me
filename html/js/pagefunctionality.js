@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$(window).bind('scroll', function(){
-		if ($(window).scrollTop() > 50){
+		if ($(window).scrollTop() > 0){
 			if (!$('.navbar').hasClass('navdown'))
 				swapbar(true);
 		}
@@ -12,17 +12,12 @@ $(document).ready(function(){
 });
 
 var swapbar=function(fromdefault){
-	$('.navbar').slideUp(200, function(){
-		if (fromdefault){
-			$('.navbar').addClass('navdown');
-			$('.navbar-brand').html('<img src="images/banner-monochrome-black.png" height="40" width="200">');
-		}
-		else{
-			$('.navbar').removeClass('navdown');
-			$('.navbar-brand').html('<img src="images/banner-monochrome-white.png" height="40" width="200">');
-		}
-		$('.navbar').slideDown(200);
-	});
+	if (fromdefault){
+	
+	}
+	else{
+
+	}
 }
 
 var startclub=function(){
