@@ -10,6 +10,13 @@ $(document).ready(function(){
 			if ($('.navbar').hasClass('navdown'))
 				swapbar(false);
 		}
+		
+		if ($(window).scrollTop() >= $('#wfcontent').offset().top){
+			$('.navbar-brand').html('<img src="images/banner-monochrome-black.png" height="30" width="150">');
+		}
+		else{
+			$('.navbar-brand').html('');
+		}
 	});
 });
 
