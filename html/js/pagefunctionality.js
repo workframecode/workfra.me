@@ -12,14 +12,18 @@ $(document).ready(function(){
 		}
 		
 		if ($(window).scrollTop() >= $('#wfcontent').offset().top){
-			$('#logo').animate({
-				opacity: '1.0'
-			}, 200);
+			if ($('#logo').css('opacity')=='0'){
+				$('#logo').animate({
+					opacity: '1.0'
+				}, 200);
+			}
 		}
 		else{
-			$('#logo').animate({
-				opacity: '0.0'
-			}, 200);
+			if ($('#logo').css('opacity')=='1'){
+				$('#logo').animate({
+					opacity: '0.0'
+				}, 200);
+			}
 		}
 	});
 });
