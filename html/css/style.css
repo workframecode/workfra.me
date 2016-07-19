@@ -63,7 +63,15 @@
 }
 
 
-
+@media (max-width: 768px){
+	.navbar-brand{
+		position: absolute;
+		left: 50%;
+		margin-left: -95px;
+		margin-top: -5px;
+	}
+	
+}
 
 .navdown .navlink{
 	color: #505050 !important;
