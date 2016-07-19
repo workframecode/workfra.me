@@ -26,7 +26,7 @@ var swapbar=function(fromdefault){
 	else{
 		$('.navbar').animate({
 			backgroundColor: 'transparent',
-			boxShadow: 'none'
+			boxShadow: '0 0 0'
 		}, 200, function(){
 			$('.navbar').removeClass('navdown');
 		});
