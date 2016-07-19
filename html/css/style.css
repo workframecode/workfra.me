@@ -61,6 +61,17 @@
 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.7)
 }
 
+.navbar-nav{
+	float: none !important;
+	margin: 0 auto !important;
+	display: table !important;
+}
+
+.navbar-nav>li>a{
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+}
+
 .active>a{
 	background-color: rgba(0,0,0,0.3) !important;
 }
