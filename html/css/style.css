@@ -15,6 +15,10 @@
 	padding: 10vw;
 }
 
+#backdrop{
+	z-index: -1;
+}
+
 #backdrop img{
 	max-width:100%;
 	max-height:100%;

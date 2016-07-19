@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$(window).bind('scroll', function(){
-		$('#bgbanner').css('margin-top', $(window).scrollTop() * -.3);
+		$('#bgbanner').css('margin-top', $(window).scrollTop() * - 0.3);
+		$('#backdrop').css('margin-bottom', $(window).scrollTop() * - 1.1);
 		
 		if ($(window).scrollTop() > 0){
 			if (!$('.navbar').hasClass('navdown'))
@@ -11,7 +12,7 @@ $(document).ready(function(){
 				swapbar(false);
 		}
 		
-		if ($(window).scrollTop() >= $('#wfcontent').offset().top){
+		if ($(window).scrollTop() >= ($('#wfcontent').offset().top-$('.navbar').height())){
 			if ($('#logo').css('opacity')=='0'){
 				$('#logo').animate({
 					opacity: '1.0'
