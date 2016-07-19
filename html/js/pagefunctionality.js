@@ -15,10 +15,20 @@ $(document).ready(function(){
 
 var swapbar=function(fromdefault){
 	if (fromdefault){
-		
+		$('.navbar').animate({
+			backgroundColor: '#ffffff',
+			boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.7)'
+		}, 200, function(){
+			$('.navbar').addClass('navdown');
+		});
 	}
 	else{
-		
+		$('.navbar').animate({
+			backgroundColor: 'transparent',
+			boxShadow: 'none'
+		}, 200, function(){
+			$('.navbar').removeClass('navdown');
+		});
 	}
 }
 
