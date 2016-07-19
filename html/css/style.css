@@ -46,6 +46,12 @@
 	font-size: 15px;
 }
 
+#logo{
+	width: 150px;
+	height: 30px;
+	opacity: 0.0;
+}
+
 .youtubeembed{
 	max-width: 560px;
 	padding-bottom: 315px;
@@ -68,6 +74,7 @@
 	float: none !important;
 	margin: 0 auto;
 	display: table;
+	padding-right: 150px;
 }
 
 .navbar-nav>li>a{

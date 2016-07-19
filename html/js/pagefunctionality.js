@@ -12,12 +12,14 @@ $(document).ready(function(){
 		}
 		
 		if ($(window).scrollTop() >= $('#wfcontent').offset().top){
-			$('.navbar-brand').html('<img src="images/banner-monochrome-black.png" height="30" width="150">');
-			$('.navbar-nav').css({'padding-right': '150px'});
+			$('#logo').animate({
+				opacity: '1.0'
+			}, 200);
 		}
 		else{
-			$('.navbar-brand').html('');
-			$('.navbar-nav').css({'padding-right': '0px'});
+			$('#logo').animate({
+				opacity: '0.0'
+			}, 200);
 		}
 	});
 });
@@ -28,16 +30,14 @@ var swapbar=function(fromdefault){
 		$('.navbar').animate({
 			backgroundColor: '#ffffff',
 			boxShadow: '0px 0px 20px 0px rgba(0,0,0,0.7)'
-		}, 200, function(){
-		});
+		}, 200);
 		$('.navbar').addClass('navdown');
 	}
 	else{
 		$('.navbar').animate({
 			backgroundColor: 'transparent',
 			boxShadow: '0 0 0'
-		}, 200, function(){
-		});
+		}, 200);
 		$('.navbar').removeClass('navdown');
 	}
 }
