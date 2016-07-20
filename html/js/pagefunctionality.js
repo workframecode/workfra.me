@@ -32,8 +32,10 @@ $(document).ready(function(){
 	});
 	
 	$(window).resize(function(){
-		if ($('.navbar-toggle').is(':visible')){ //Roughly translates to (if not mobile view)
+		if ($('.navbar-toggle').is(':visible')){ //Roughly translates to (if mobile view)
 			$('#navbar').css('marginLeft', '100vw');
+			$('#backdrop').css('margin-bottom', '0');
+			$('#backdrop').css('opacity', '1');
 		}
 		else{
 			$('#navbar').css('marginLeft', '0');
