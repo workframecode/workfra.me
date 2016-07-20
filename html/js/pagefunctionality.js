@@ -30,6 +30,15 @@ $(document).ready(function(){
 			}
 		}
 	});
+	
+	$(window).resize(function(){
+		if ($('.navbar-toggle').is(':visible')){ //Roughly translates to (if not mobile view)
+			$('#navbar').css('marginLeft', '100vw');
+		}
+		else{
+			$('#navbar').css('marginLeft', '0');
+		}
+	});
 });
 
 var swapbar=function(fromdefault){
