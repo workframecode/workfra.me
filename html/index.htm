@@ -47,7 +47,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand navlink" href="#"><img class="logo" src="images/banner-monochrome-black.png"></a>
+					<a class="navbar-brand navlink" href="#home"><img class="logo" src="images/banner-monochrome-black.png"></a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
@@ -57,10 +57,10 @@
 								<span>&#10060;</span>
 							</button>
 						</li>
-						<li class="active"><a href="#" class="navlink">Home</a></li>
-						<li><a href="#about" class="navlink">About</a></li>
-						<li><a href="#activities" class="navlink">Activities</a></li>
-						<li><a href="#contact" class="navlink">Contact</a></li>
+						<li class="active"><a href="#home" class="navlink tablink">Home</a></li>
+						<li><a href="#about" class="navlink tablink">About</a></li>
+						<li><a href="#activities" class="navlink tablink">Activities</a></li>
+						<li><a href="#contact" class="navlink tablink">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -68,53 +68,58 @@
 
 		<div class="container pagecontent">
 			<div id="bgbanner"></div>
-			<div id="banner">
+			<div id="home">
 				<div id="backdrop" class="center-block">
 					<img src="images/banner-black-text.png" />
 				</div>
 			</div>
 			<div id="wfcontent">
-				<h3>WorkFrame is a non-profit organization centered around making it easier to learn and understand technology.</h3>
-				<br />
-				<br />
-				<div class="embed-responsive embed-responsive-16by9 youtubeembed">
-					<iframe class="embed-responsive" src="https://www.youtube.com/embed/Gc2en3nHxA4" frameborder="0" allowfullscreen></iframe>
+				<div id="about">
+					<h3>WorkFrame is a non-profit organization centered around making it easier to learn and understand technology.</h3>
+					<br />
+					<br />
+					<div class="embed-responsive embed-responsive-16by9 youtubeembed">
+						<iframe class="embed-responsive" src="https://www.youtube.com/embed/Gc2en3nHxA4" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<br />
+					<br />
+					<p>Our initiative operates by having clubs across institutions where members are given easy access to approaching technology. Volunteers who are experienced can take control of their local WorkFrame club and push it forward by shaping it to their members' needs.</p>
+					<br />
+					<div class="row">
+						<div class="col-md-4">
+							<h3>Learn</h3>
+							Our recommanded syllabus is focussed on practicality and real world usage of technology in contrast to standard college courses. Our volunteers will host sessions from time to time to cover these topics in your club.
+						</div>
+						<div class="col-md-4">
+							<h3>Events</h3>
+							We use our combined audience to periodically host offline events such as hackathons, code challenges, etc. We also host workshops or seminars conducted by reputed keynote speakers when the demand arises.
+						</div>
+						<div class="col-md-4">
+							<h3>Community</h3>
+							If you don't know why your program doesn't compile, or you need to find interested people for a project, or even to simply host a LAN party in your off hours, the WorkFrame community will help you out.
+						</div>
+					</div>
+					<br />
+					<br />
+					<p>If WorkFrame doesn't exist in your college, but you like what we're doing, consider <a onclick="startclub()" href="#">starting a club</a> yourself.</p>
 				</div>
-				<br />
-				<br />
-				<p>Our initiative operates by having clubs across institutions where members are given easy access to approaching technology. Volunteers who are experienced can take control of their local WorkFrame club and push it forward by shaping it to their members' needs.</p>
-				<br />
-				<div class="row">
-					<div class="col-md-4">
-						<h3>Learn</h3>
-						Our recommanded syllabus is focussed on practicality and real world usage of technology in contrast to standard college courses. Our volunteers will host sessions from time to time to cover these topics in your club.
-					</div>
-					<div class="col-md-4">
-						<h3>Events</h3>
-						We use our combined audience to periodically host offline events such as hackathons, code challenges, etc. We also host workshops or seminars conducted by reputed keynote speakers when the demand arises.
-					</div>
-					<div class="col-md-4">
-						<h3>Community</h3>
-						If you don't know why your program doesn't compile, or you need to find interested people for a project, or even to simply host a LAN party in your off hours, the WorkFrame community will help you out.
-					</div>
-				</div>
-				<br />
-				<br />
-				<p>If WorkFrame doesn't exist in your college, but you like what we're doing, consider <a onclick="startclub()" href="#">starting a club</a> yourself.</p>
 				<hr />
-				<p>
-					Our primary mode of communication is IRC.<br />
-					Server: workfra.me<br />
-					Channel: #workframe<br />
-					<span class="subtext"><a href="https://chat.mibbit.com/?server=workfra.me&channel=%23workframe" target="_blank" rel="noopener noreferrer">Connect via a web client</a></span><br />
-				</p>
-				<p>
-					We also have a Facebook page that you can follow where all notices or news about events, activities or sessions will be posted.
-				</p>
-				<p>
-				</p>
-				<br />
-				<div id="recaptcha"></div>
+				<div id="activities">
+					<p>
+						Our primary mode of communication is IRC.<br />
+						Server: workfra.me<br />
+						Channel: #workframe<br />
+						<span class="subtext"><a href="https://chat.mibbit.com/?server=workfra.me&channel=%23workframe" target="_blank" rel="noopener noreferrer">Connect via a web client</a></span><br />
+					</p>
+					<p>
+						We also have a Facebook page that you can follow where all notices or news about events, activities or sessions will be posted.
+					</p>
+					<p>
+					</p>
+				</div>
+				<div id="contact">
+					<div id="recaptcha"></div>
+				</div>
 			</div>
 		</div>
 	</body>

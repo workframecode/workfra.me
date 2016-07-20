@@ -8,7 +8,7 @@
 	background-size: cover;
 }
 
-#banner{
+#home{
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -127,6 +127,13 @@
 .navlink{
 	color: #e0e0e0 !important;
 	font-weight: bold;
+}
+
+.navbar-nav>li{
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
 
 .navbar-nav>li>a{

@@ -1,4 +1,17 @@
 $(document).ready(function(){
+	$('a[href^="#"]').on('click', function(event){
+		var target=$(this.getAttribute('href'));
+		if (target.length) {
+			event.preventDefault();
+			var scrolloffset=target.offset().top-(2*$('.navbar').height());
+			var scrolltarget=scrolloffset>0?scrolloffset:0;
+			if ($(window).scrollTop()!=scrolltarget)
+			$('html, body').stop().animate({
+				scrollTop: scrolltarget
+			}, 1000);
+		}
+	});
+	
 	$(window).bind('scroll', function(){
 		$('#bgbanner').css('margin-top', $(window).scrollTop() * - 0.3);
 		if (!$('.navbar-toggle').is(':visible')){ //Roughly translates to (if not mobile view)
@@ -29,6 +42,14 @@ $(document).ready(function(){
 				}, 200);
 			}
 		}
+		
+		var activetab=$('.tablink')[0];
+		$('.tablink').each(function(){
+			if ($(this.getAttribute('href')).offset().top-(2*$('.navbar').height())<=$(window).scrollTop()){
+				activetab=this;
+			}
+		});
+		setactivetab(activetab);
 	});
 	
 	$(window).resize(function(){
@@ -69,6 +90,11 @@ var hidesidebar=function(){
 	$('#navbar').animate({
 		marginLeft: '100vw'
 	}, 200);
+}
+
+var setactivetab=function(tab){
+	$('.active').removeClass('active');
+	$(tab).parent('li').addClass('active');
 }
 
 var startclub=function(){
