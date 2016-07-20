@@ -129,24 +129,13 @@
 	font-weight: bold;
 }
 
-.navbar-nav>li{
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-}
-
 .navbar-nav>li>a{
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
-.active>a{
-	background-color: rgba(0,0,0,0.3) !important;
-}
-
-.navbar-nav>.open>a{
-	background-color: rgba(0,0,0,0.3) !important;
+.activetab>a{
+	background-color: rgba(0,0,0,0.3);
 }
 
 .navbar-default{

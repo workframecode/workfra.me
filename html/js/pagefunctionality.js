@@ -8,7 +8,7 @@ $(document).ready(function(){
 			if ($(window).scrollTop()!=scrolltarget)
 			$('html, body').stop().animate({
 				scrollTop: scrolltarget
-			}, 1000);
+			}, 700);
 		}
 	});
 	
@@ -93,8 +93,16 @@ var hidesidebar=function(){
 }
 
 var setactivetab=function(tab){
-	$('.active').removeClass('active');
-	$(tab).parent('li').addClass('active');
+	if (!$(tab).parent().hasClass('activetab')){
+		$('.activetab>a').animate({
+			backgroundColor: 'rgba(0,0,0,0.0)'
+		},200);
+		$('.activetab').removeClass('activetab');
+		$(tab).parent('li').addClass('activetab');
+		$('.activetab>a').animate({
+			backgroundColor: 'rgba(0,0,0,0.3)'
+		},200);
+	}
 }
 
 var startclub=function(){
