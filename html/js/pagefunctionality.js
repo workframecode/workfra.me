@@ -1,5 +1,8 @@
 $(document).ready(function(){
 	$('a[href^="#"]').on('click', function(event){
+		if ($('.navbar-toggle').is(':visible')){
+			hidesidebar();
+		}
 		var target=$(this.getAttribute('href'));
 		if (target.length) {
 			event.preventDefault();

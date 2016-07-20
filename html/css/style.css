@@ -134,6 +134,11 @@
 	padding-bottom: 20px;
 }
 
+.navbar-nav>li>a:hover{
+	background-color: rgba(0,145,80,1.0) !important;
+	color: #e0e0e0 !important;
+}
+
 .activetab>a{
 	background-color: rgba(0,0,0,0.3);
 }
