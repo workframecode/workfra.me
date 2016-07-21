@@ -81,6 +81,13 @@
 		}
 		msg.step=true;
 	}
+	exports.colempty=function(msg){
+		if (!msg.val.length){
+			msg.pass=false;
+			msg.error='Field cannot be empty. Type "NA" if not applicable.';
+		}
+		msg.step=true;
+	}
 	exports.max64=function(msg){
 		if (msg.val.trim().length>64){
 			msg.pass=false;

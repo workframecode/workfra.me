@@ -2,10 +2,10 @@ var recaptchaResponse=function(response){
 	if (isvalidated()){
 		$.post('/recaptcha.php', {response: response, name: $("#name").val(), college: $("#college").val(), message: $("#message").val()}, function(result){
 			if (result.success){
-				captchapass();
+				console.log('pass');
 			}
 			else{
-				captchafail();
+				console.log('fail');
 			}
 		});
 	}

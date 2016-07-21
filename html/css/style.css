@@ -69,6 +69,16 @@ body,html{
 	display: none;
 }
 
+#formnotify{
+	display: none;
+	color: green;
+	padding: 10px;
+	border: solid 1px;
+	background-color: rgba(0,255,0,0.1);
+	margin: 10px;
+	margin-bottom: 30px;
+}
+
 .logo{
 	width: 150px;
 	height: 30px;

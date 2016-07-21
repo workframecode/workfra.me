@@ -46,32 +46,6 @@ $(document).ready(function(){
 			}
 		}
 		
-		validations['name']=[valtract,stdlength,nospecial];
-		validations['college']=[valtract,empty,max128];
-		validations['email']=[valtract,empty,max64,emailvalidate];
-		validations['message']=[valtract,empty,max512];
-		
-		$('body').on('blur', '.form-control', function(){
-			$(this).parent().parent().removeClass("has-error has-success");
-			$("#"+$(this).attr('id')+"pass").remove();
-			$("#"+$(this).attr('id')+"error").remove();
-			msg.val=validations[$(this).attr('id')][0]($(this).attr('id'));
-			msg.elemid=$(this).attr('id');
-			for (var i=1;i<validations[$(this).attr('id')].length;i++){
-				validations[$(this).attr('id')][i](msg);
-				if (msg.pass==false){
-					$(this).parent().parent().addClass("has-error");
-					$('<span class="error validating" id="'+$(this).attr('id')+'error">'+msg.error+'</span>').insertAfter($(this));
-					break;
-				}
-			}
-			if (msg.pass==true){
-				$(this).parent().parent().addClass("has-success");
-			}
-			msg.pass=true;
-			msg.error="";
-		});
-		
 		var activetab=$('.tablink')[0];
 		$('.tablink').each(function(){
 			if ($(this.getAttribute('href')).offset().top-(2*$('.navbar').height())<=$(window).scrollTop()){
@@ -79,6 +53,37 @@ $(document).ready(function(){
 			}
 		});
 		setactivetab(activetab);
+	});
+	
+	$('.form-control').bind('input', function(event){
+		$('#formnotify').fadeOut();
+		$(this).parent().parent().removeClass("has-error has-success");
+		$("#"+$(this).attr('id')+"error").remove();
+	});
+	
+	validations['name']=[valtract,stdlength,nospecial];
+	validations['college']=[valtract,colempty,max128];
+	validations['email']=[valtract,empty,max64,emailvalidate];
+	validations['message']=[valtract,empty,max512];
+	
+	$('body').on('blur', '.form-control', function(){
+		$(this).parent().parent().removeClass("has-error has-success");
+		$("#"+$(this).attr('id')+"error").remove();
+		msg.val=validations[$(this).attr('id')][0]($(this).attr('id'));
+		msg.elemid=$(this).attr('id');
+		for (var i=1;i<validations[$(this).attr('id')].length;i++){
+			validations[$(this).attr('id')][i](msg);
+			if (msg.pass==false){
+				$(this).parent().parent().addClass("has-error");
+				$('<span class="error validating" id="'+$(this).attr('id')+'error">'+msg.error+'</span>').insertAfter($(this));
+				break;
+			}
+		}
+		if (msg.pass==true){
+			$(this).parent().parent().addClass("has-success");
+		}
+		msg.pass=true;
+		msg.error="";
 	});
 	
 	$(window).resize(function(){
@@ -136,13 +141,39 @@ var setactivetab=function(tab){
 
 var startclub=function(event){
 	event.preventDefault();
-	$('#message').val('Hello,\n\nI like the initiative that WorkFrame is taking and I think there are students here who could really benefit from it.\nPlease consider involving my college as a part of WorkFrame.\n\nThanks');
-	isvalidated();
+	$('#message').val('Hello,\n\nI like the initiative that WorkFrame is taking and and would really appreciate it if you would consider involving my college as a part of the organization.\n\nThanks');
+	$('#formnotify').css('display','inline-block');
 	$('html, body').stop().animate({
 		scrollTop: $('#contact').offset().top-(2*$('.navbar').height())
 	}, 700);
 }
 
-var isvalidated=function(){
+var isvalidated=function(){	
+	$(".validating").remove();
+	$(".has-error").removeClass("has-error");
+	$(".has-success").removeClass("has-success");
+	outer:
+	for (var key in validations){
+		msg.val=validations[key][0](key);
+		msg.elemid=key;
+		for (var i=1;i<validations[key].length;i++){
+			validations[key][i](msg);
+			if (msg.pass==false){
+				$("#"+key).parent().parent().addClass("has-error");
+				$('<span class="error validating" id="'+key+'error">'+msg.error+'</span>').insertAfter($("#"+key));
+				$("#"+key).focus();
+				break outer;
+			}
+		}
+		$("#"+key).parent().parent().addClass("has-success");
+	}
+	msg.pass=true;
+	msg.error="";
 	
+	if ($(".error").length){ //Oops
+		return false;
+	}
+	else{ //All clear
+		return true;
+	}
 }
