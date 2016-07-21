@@ -46,6 +46,11 @@
 	margin-bottom: 50px;
 }
 
+.section{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
 .subtext{
 	font-size: 15px;
 }
@@ -57,6 +62,10 @@
 .logo{
 	width: 150px;
 	height: 30px;
+}
+
+#contactform{
+	font-size: 16px;
 }
 
 .youtubeembed{

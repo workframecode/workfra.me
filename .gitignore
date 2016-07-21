@@ -1,3 +1,2 @@
-# Ignore captcha related scripts. Contains secret/API keys or tokens.
+# Ignore captcha related backend scripts. Contains secret keys and method for saving contact requests.
 recaptcha.php
-recaptcha.js

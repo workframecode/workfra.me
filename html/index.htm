@@ -74,7 +74,7 @@
 				</div>
 			</div>
 			<div id="wfcontent">
-				<div id="about">
+				<div id="about" class="section">
 					<h3>WorkFrame is a non-profit organization centered around making it easier to learn and understand technology.</h3>
 					<br />
 					<br />
@@ -104,7 +104,7 @@
 					<p>If WorkFrame doesn't exist in your college, but you like what we're doing, consider <a onclick="startclub()" href="#">starting a club</a> yourself.</p>
 				</div>
 				<hr />
-				<div id="activities">
+				<div id="activities" class="section">
 					<p>
 						Our primary mode of communication is IRC.<br />
 						Server: workfra.me<br />
@@ -117,8 +117,46 @@
 					<p>
 					</p>
 				</div>
-				<div id="contact">
-					<div id="recaptcha"></div>
+				<hr />
+				<div id="contact" class="section">
+					<p>
+						Direct all necessary concerns and queries to <a href="mailto:support@workfra.me">support@workfra.me</a><br />
+						Or feel free to simply drop by and say hi at <a href="mailto:hello@workfra.me">hello@workfra.me</a><br />
+						<br />
+						You can also fill out this contact form instead to reach us. Feedback and requests are welcome.<br />
+						<span class="subtext">If you are using this form to request starting a club, please double check that the fields for your college and your email address are valid.</span>
+					</p>
+					<br />
+					<form class="form-horizontal" id="contactform" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Name :</label>
+							<div class="col-sm-7">
+								<input type="text" placeholder="Eg: John Doe" size=50 id="name" class="form-control" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">College :</label>
+							<div class="col-sm-7">
+								<input type="text" placeholder="The institution you belong to" size=50 id="college" class="form-control" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Email :</label>
+							<div class="col-sm-7">
+								<input type="email" placeholder="We'll get back to you on this address" size=50 id="email" class="form-control" required/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">Message :</label>
+							<div class="col-sm-7">
+								<textarea rows="5" placeholder="Type your message here..." size=500 id="message" class="form-control"></textarea>
+							</div>
+						</div>
+						<br />
+						<p>
+							<div><center><div id="recaptcha"></div></center></div>
+						</p>
+					</form>
 				</div>
 			</div>
 		</div>

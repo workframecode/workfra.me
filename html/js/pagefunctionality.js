@@ -109,13 +109,13 @@ var setactivetab=function(tab){
 }
 
 var startclub=function(){
-	console.log("Scroll to query form with the message field filled out.");
+	$("#message").val("Hello,\n\nI like the initiative that WorkFrame is taking and I think there are students here who could really benefit from it.\nPlease consider involving my college as a part of WorkFrame.\n\nThanks");
+	isvalidated();
+	$('html, body').stop().animate({
+		scrollTop: $('#contact').offset().top-(2*$('.navbar').height())
+	}, 700);
 }
 
-var captchapass=function(){
-
-}
-
-var captchafail=function(){
-
+var isvalidated=function(){
+	
 }
