@@ -69,12 +69,22 @@ body,html{
 	display: none;
 }
 
-#formnotify{
+#formnotify,#formpass{
 	display: none;
 	color: green;
 	padding: 10px;
 	border: solid 1px;
 	background-color: rgba(0,255,0,0.1);
+	margin: 10px;
+	margin-bottom: 30px;
+}
+
+#formerror{
+	display: none;
+	color: red;
+	padding: 10px;
+	border: solid 1px;
+	background-color: rgba(255,0,0,0.1);
 	margin: 10px;
 	margin-bottom: 30px;
 }

@@ -1,6 +1,7 @@
 var recaptchaResponse=function(response){
 	if (isvalidated()){
 		$.post('/recaptcha.php', {response: response, name: $("#name").val(), email: $("#email").val(), college: $("#college").val(), message: $("#message").val()}, function(result){
+			console.log(response);
 			console.log(result);
 			if (result.success){
 				console.log('pass');
@@ -9,6 +10,11 @@ var recaptchaResponse=function(response){
 				console.log('fail');
 			}
 		});
+	}
+	else{
+		$('#formerror').html('Your form has errors that need to be resolved.');
+		$('#formerror').fadeIn();
+		grecaptcha.reset();
 	}
 }
 

@@ -57,6 +57,7 @@ $(document).ready(function(){
 	
 	$('.form-control').bind('input', function(event){
 		$('#formnotify').fadeOut();
+		$('#formerror').fadeOut();
 		$(this).parent().parent().removeClass("has-error has-success");
 		$("#"+$(this).attr('id')+"error").remove();
 	});
