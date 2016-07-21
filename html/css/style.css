@@ -1,4 +1,4 @@
-* {
+body,html{
 	font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
 }
 
@@ -57,6 +57,12 @@
 
 .subtext{
 	font-size: 15px;
+}
+
+.error{
+	color: #ff0000;
+	font-style: italic;
+	font-size: 0.9em;
 }
 
 #sidebartitle{

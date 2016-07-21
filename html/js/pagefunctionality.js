@@ -46,6 +46,32 @@ $(document).ready(function(){
 			}
 		}
 		
+		validations['name']=[valtract,stdlength,nospecial];
+		validations['college']=[valtract,empty,max128];
+		validations['email']=[valtract,empty,max64,emailvalidate];
+		validations['message']=[valtract,empty,max512];
+		
+		$('body').on('blur', '.form-control', function(){
+			$(this).parent().parent().removeClass("has-error has-success");
+			$("#"+$(this).attr('id')+"pass").remove();
+			$("#"+$(this).attr('id')+"error").remove();
+			msg.val=validations[$(this).attr('id')][0]($(this).attr('id'));
+			msg.elemid=$(this).attr('id');
+			for (var i=1;i<validations[$(this).attr('id')].length;i++){
+				validations[$(this).attr('id')][i](msg);
+				if (msg.pass==false){
+					$(this).parent().parent().addClass("has-error");
+					$('<span class="error validating" id="'+$(this).attr('id')+'error">'+msg.error+'</span>').insertAfter($(this));
+					break;
+				}
+			}
+			if (msg.pass==true){
+				$(this).parent().parent().addClass("has-success");
+			}
+			msg.pass=true;
+			msg.error="";
+		});
+		
 		var activetab=$('.tablink')[0];
 		$('.tablink').each(function(){
 			if ($(this.getAttribute('href')).offset().top-(2*$('.navbar').height())<=$(window).scrollTop()){
@@ -108,8 +134,9 @@ var setactivetab=function(tab){
 	}
 }
 
-var startclub=function(){
-	$("#message").val("Hello,\n\nI like the initiative that WorkFrame is taking and I think there are students here who could really benefit from it.\nPlease consider involving my college as a part of WorkFrame.\n\nThanks");
+var startclub=function(event){
+	event.preventDefault();
+	$('#message').val('Hello,\n\nI like the initiative that WorkFrame is taking and I think there are students here who could really benefit from it.\nPlease consider involving my college as a part of WorkFrame.\n\nThanks');
 	isvalidated();
 	$('html, body').stop().animate({
 		scrollTop: $('#contact').offset().top-(2*$('.navbar').height())
