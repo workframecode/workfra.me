@@ -1,6 +1,7 @@
 var recaptchaResponse=function(response){
 	if (isvalidated()){
-		$.post('/recaptcha.php', {response: response, name: $("#name").val(), college: $("#college").val(), message: $("#message").val()}, function(result){
+		$.post('/recaptcha.php', {response: response, name: $("#name").val(), email: $("#email").val(), college: $("#college").val(), message: $("#message").val()}, function(result){
+			console.log(result);
 			if (result.success){
 				console.log('pass');
 			}

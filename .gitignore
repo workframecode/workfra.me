@@ -1,2 +1,2 @@
-# Ignore captcha related backend scripts. Contains secret keys and method for saving contact requests.
+# Ignore captcha related backend scripts. Contains secret keys and method for mailing contact requests.
 recaptcha.php
