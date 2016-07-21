@@ -1,3 +1,7 @@
+* {
+	font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
+}
+
 #bgbanner{
 	position: fixed;
 	height: 100vh;
