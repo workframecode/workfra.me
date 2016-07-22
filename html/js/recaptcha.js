@@ -4,7 +4,7 @@ var recaptchaResponse=function(response){
 			console.log(response);
 			console.log(result);
 			if (result.success){
-				$('#formpass').fadeIn();
+				$('#formpass').fadeIn().css('display','inline-block');
 				$('.form-control').each(function(){
 					$(this).val('');
 				});
@@ -18,18 +18,18 @@ var recaptchaResponse=function(response){
 					if (result.nofix){
 						$('#formerror').html('Something went wrong. If you know of an alternate way to reach the developers, tell them about this error. You can also check the console log for more details.');
 						console.log('Backend error while submitting contact form: '+result.errormsg)
-						$('#formerror').fadeIn();
+						$('#formerror').fadeIn().css('display','inline-block');
 						grecaptcha.reset();
 					}
 					else{
 						$('#formerror').html(result.errormsg);
-						$('#formerror').fadeIn();
+						$('#formerror').fadeIn().css('display','inline-block');
 						grecaptcha.reset();
 					}
 				}
 				else{
 					$('#formerror').html('You did not answer the captcha right. Try again.');
-					$('#formerror').fadeIn();
+					$('#formerror').fadeIn().css('display','inline-block');
 					grecaptcha.reset();
 				}
 				console.log('fail');
@@ -38,7 +38,7 @@ var recaptchaResponse=function(response){
 	}
 	else{
 		$('#formerror').html('Your form has errors that need to be resolved.');
-		$('#formerror').fadeIn();
+		$('#formerror').fadeIn().css('display','inline-block');
 		grecaptcha.reset();
 	}
 }
