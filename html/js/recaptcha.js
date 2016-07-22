@@ -1,8 +1,8 @@
 var recaptchaResponse=function(response){
 	if (isvalidated()){
+		$('.loader').css('display', 'block');
 		$.post('/recaptcha.php', {response: response, name: $("#name").val(), email: $("#email").val(), college: $("#college").val(), message: $("#message").val()}, function(result){
-			console.log(response);
-			console.log(result);
+			$('.loader').css('display', 'none');
 			if (result.success){
 				$('#formpass').fadeIn().css('display','inline-block');
 				$('.form-control').each(function(){
@@ -11,7 +11,6 @@ var recaptchaResponse=function(response){
 				setTimeout(function(){
 					$('#formpass').fadeOut();
 				},3000);
-				console.log('pass');
 			}
 			else{
 				if (result.errormsg){
@@ -32,7 +31,6 @@ var recaptchaResponse=function(response){
 					$('#formerror').fadeIn().css('display','inline-block');
 					grecaptcha.reset();
 				}
-				console.log('fail');
 			}
 		});
 	}

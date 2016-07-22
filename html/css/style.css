@@ -21,6 +21,7 @@ body,html{
 
 #backdrop{
 	z-index: -1;
+	max-width: 800px;
 }
 
 #backdrop img{
@@ -48,6 +49,10 @@ body,html{
 	margin-left: -50px;
 	margin-top: 50px;
 	margin-bottom: 50px;
+}
+
+.loader{
+	display: none;
 }
 
 .section{

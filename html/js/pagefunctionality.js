@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var target=$(this.getAttribute('href'));
 		if (target.length) {
 			event.preventDefault();
-			var scrolloffset=target.offset().top-(2*$('.navbar').height());
+			var scrolloffset=target.offset().top-(2*$('.navbar').height())+10;
 			var scrolltarget=scrolloffset>0?scrolloffset:0;
 			if ($(window).scrollTop()!=scrolltarget)
 			$('html, body').stop().animate({
