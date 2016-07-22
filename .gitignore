@@ -1,2 +1,5 @@
 # Ignore captcha related backend scripts. Contains secret keys and method for mailing contact requests.
 recaptcha.php
+
+# Assets folder will be cloned seperately from the assets repository
+assets/
