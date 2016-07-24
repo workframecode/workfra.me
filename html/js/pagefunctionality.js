@@ -145,7 +145,7 @@ var startclub=function(event){
 	$('#message').val('Hello,\n\nI like the initiative that WorkFrame is taking and would really appreciate it if you would consider involving my college as a part of the organization.\n\nThanks');
 	$('#formnotify').css('display','inline-block');
 	$('html, body').stop().animate({
-		scrollTop: $('#contact').offset().top-(2*$('.navbar').height())
+		scrollTop: $('#formnotify').offset().top-$('.navbar').height()-20
 	}, 700);
 }
 
