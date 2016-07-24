@@ -14,6 +14,7 @@ var recaptchaResponse=function(response){
 				setTimeout(function(){
 					$('#formpass').fadeOut();
 				},3000);
+				grecaptcha.reset();
 			}
 			else{
 				if (result.errormsg){
