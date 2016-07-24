@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'Raleway';
+	src: url(../assets/fonts/Raleway/Raleway-Medium.ttf);
+}
+
 body,html{
 	font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
 }
