@@ -1,183 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<meta name="description" content="WorkFrame is a non-profit organization that makes it easier to learn and understand technology"/>
-		<meta name="keywords" content="WorkFrame, workframecode, technology, organization, institution, club, community"/>
-		<meta name="robots" content="all"/>
-		<meta name="referrer" content="origin"/>
-		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"/>
-		<meta property="og:title" content="WorkFrame"/>
-		<meta property="og:image" content="/assets/images/preview.png"/>
-		<meta property="og:description" content="WorkFrame is a non-profit organization that makes it easier to learn and understand technology"/>
-		<meta itemprop="name" content="WorkFrame"/>
-		<meta itemprop="description" content="WorkFrame is a non-profit organization that makes it easier to learn and understand technology"/>
-		<meta itemprop="image" content="/assets/images/preview.png"/>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
-		<meta name="theme-color" content="#ffffff">
-		<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" href="assets/images/icons/favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="assets/images/icons/favicon-16x16.png" sizes="16x16">
-		<link rel="manifest" href="assets/images/icons/manifest.json">
-		<link rel="mask-icon" href="assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
-		<link rel="shortcut icon" href="assets/images/icons/favicon.ico">
+	<meta name="description" content="WorkFrame is a non-profit organization that makes it easier to learn and understand technology" />
+	<meta name="keywords" content="WorkFrame, workframecode, technology, organization, institution, club, community" />
+	<meta name="robots" content="all" />
+	<meta name="referrer" content="origin" />
+	<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1" />
+	<meta property="og:title" content="WorkFrame" />
+	<meta property="og:image" content="/assets/images/preview.png" />
+	<meta property="og:description" content="WorkFrame is a non-profit organization that makes it easier to learn and understand technology" />
+	<meta itemprop="name" content="WorkFrame" />
+	<meta itemprop="description" content="WorkFrame is a non-profit organization that makes it easier to learn and understand technology" />
+	<meta itemprop="image" content="/assets/images/preview.png" />
 
-		<link href="css/normalize.css" rel="stylesheet">
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<link href="css/style.css?nocache" rel="stylesheet">
+	<meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="assets/images/icons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="assets/images/icons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="assets/images/icons/manifest.json">
+	<link rel="mask-icon" href="assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="assets/images/icons/favicon.ico">
 
-		<title>WorkFrame</title>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css?nocache" rel="stylesheet">
 
-		<script src="js/jquery.min.js" defer></script>
-		<script src="js/jquery.color.min.js" defer></script>
-		<script src="js/jquery.animate-shadow.min.js" defer></script>
-		<script src="js/bootstrap.js" defer></script>
-		<script src="js/ie10-viewport-bug-workaround.js" defer></script>
-		<!--[if lt IE 9]>
+	<title>WorkFrame</title>
+
+	<script src="js/jquery.min.js" defer></script>
+	<script src="js/jquery.color.min.js" defer></script>
+	<script src="js/jquery.animate-shadow.min.js" defer></script>
+	<script src="js/bootstrap.js" defer></script>
+	<script src="js/ie10-viewport-bug-workaround.js" defer></script>
+	<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<script src="js/validation.js" defer></script>
-		<script src="js/pagefunctionality.js" defer></script>
-		<script src="js/recaptcha.js" defer></script>
+	<script src="js/validation.js" defer></script>
+	<script src="js/pagefunctionality.js" defer></script>
+	<script src="js/recaptcha.js" defer></script>
 
-		<script src="https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit" defer></script>
-	</head>
+	<script src="https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit" defer></script>
+</head>
 
-	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" onclick="slidesidebar()">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand navlink" href="#home"><img class="logo" src="assets/images/banner_monochrome_black_mini.png" alt="banner"></a>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li id="sidebartitle">
-							<img class="logo" src="assets/images/banner_monochrome_black_mini.png" alt="banner"/>
-							<button type="button" class="navbar-toggle collapsed" id="closesidebar" onclick="hidesidebar()">
-								<span>&#10060;</span>
-							</button>
-						</li>
-						<li class="activetab"><a href="#home" class="navlink tablink">Home</a></li>
-						<li><a href="#about" class="navlink tablink">About</a></li>
-						<li><a href="#activities" class="navlink tablink">Activities</a></li>
-						<li><a href="#contact" class="navlink tablink">Contact</a></li>
-					</ul>
-				</div>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" onclick="slidesidebar()">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand navlink" href="#home"><img class="logo" src="assets/images/banner_monochrome_black_mini.png" alt="banner"></a>
 			</div>
-		</nav>
-
-		<div class="container pagecontent">
-			<div id="bgbanner"></div>
-			<div id="home">
-				<div id="backdrop" class="center-block">
-					<img src="assets/images/banner_color_white.png" alt="logo"/>
-				</div>
-			</div>
-			<div id="wfcontent">
-				<div id="about" class="section">
-					<h3>WorkFrame is a non-profit organization that makes it easier to learn and understand technology.</h3>
-					<br />
-					<br />
-					<div class="embed-responsive embed-responsive-16by9 youtubeembed">
-						<iframe class="embed-responsive" src="https://www.youtube.com/embed/Gc2en3nHxA4" frameborder="0" allowfullscreen></iframe>
-					</div>
-					<br />
-					<br />
-					<p>We operate by starting clubs across different institutions where we make approaching technology simpler for our members. Experienced volunteers can take control of their local WorkFrame club and shape it according to their members' needs.</p>
-					<br />
-					<div class="row">
-						<div class="col-md-4">
-							<h3>Learn</h3>
-							We help you learn things you can use in the real world today: to find a job, write a paper, or just explore your hobbies. Our volunteers will host sessions from time to time to cover such topics in your club.
-						</div>
-						<div class="col-md-4">
-							<h3>Events</h3>
-							We regularly host events like hackathons, cross-college meetups, demos, workshops and seminars. You're welcome to come speak about something you love, teach something new, or just show us what you've been working on.
-						</div>
-						<div class="col-md-4">
-							<h3>Community</h3>
-							Need help? Looking for someone to work on a project with you? Or do you just want to meet some like minded people to chat with? Our community is open to everybody.
-						</div>
-					</div>
-					<br />
-					<br />
-					<p>If WorkFrame isn't in your institution, but you like what we're doing, consider <a onclick="startclub(event)" href="#">starting a club</a> yourself.</p>
-				</div>
-				<hr />
-				<div id="activities" class="section">
-					<p>
-						Our primary mode of communication is IRC.<br />
-						Server: workfra.me<br />
-						Channel: #workframe<br />
-						<span class="subtext"><a href="https://chat.mibbit.com/?server=workfra.me&channel=%23workframe" target="_blank" rel="noopener noreferrer">Connect via a web client</a></span><br />
-					</p>
-					<p>
-						<!-- TODO: add Facebook link -->
-						You can also follow us on Facebook to stay in the loop and know about any upcoming events and announcements.
-					</p>
-					<p>
-					</p>
-				</div>
-				<hr />
-				<div id="contact" class="section">
-					<p>
-						Have a question? Or just want to say hi? Send us an email at <a href="mailto:hello@workfra.me">hello@workfra.me</a><br />
-						If you have any problems, we're happy to help. Contact <a href="mailto:support@workfra.me">support@workfra.me</a><br />
-						<br />
-						You can also fill out this contact form instead to reach us. Feel free to make requests or give us feedback<br />
-						<span class="subtext">If you are using this form to request starting a club, please make sure the name of your institution and your email ID are accurate.</span>
-					</p>
-					<form class="form-horizontal" id="contactform" role="form">
-						<div id="formnotify">Complete this form to send the request for a new club. We've already filled out the message field for you.<br /></div>
-						<div id="formerror"><br /></div>
-						<div id="formpass">Form successfully submitted.<br /></div>
-						<br />
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Name :</label>
-							<div class="col-sm-7">
-								<input type="text" placeholder="Eg: John Doe" size="50" id="name" class="form-control" required/>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">College :</label>
-							<div class="col-sm-7">
-								<input type="text" placeholder="The institution you belong to" size="50" id="college" class="form-control" required/>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Email :</label>
-							<div class="col-sm-7">
-								<input type="email" placeholder="We'll get back to you on this address" size="50" id="email" class="form-control" required/>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="col-sm-3 control-label">Message :</label>
-							<div class="col-sm-7">
-								<textarea rows="6" placeholder="Type your message here..." size="500" id="message" class="form-control"></textarea>
-							</div>
-						</div>
-						<div class="loader"><img src="assets/images/loading.gif" /></div>
-						<p>
-							Complete the captcha to submit the form
-							<br />
-							<div class="captchacontainer">
-								<center><div id="recaptcha"></div></center>
-							</div>
-						</p>
-					</form>
-				</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li id="sidebartitle">
+						<img class="logo" src="assets/images/banner_monochrome_black_mini.png" alt="banner" />
+						<button type="button" class="navbar-toggle collapsed" id="closesidebar" onclick="hidesidebar()">
+							<span>&#10060;</span>
+						</button>
+					</li>
+					<li class="activetab"><a href="#home" class="navlink tablink">Home</a></li>
+					<li><a href="#about" class="navlink tablink">About</a></li>
+					<li><a href="#activities" class="navlink tablink">Activities</a></li>
+					<li><a href="#contact" class="navlink tablink">Contact</a></li>
+				</ul>
 			</div>
 		</div>
-	</body>
+	</nav>
+
+	<div class="container pagecontent">
+		<div id="bgbanner"></div>
+		<div id="home">
+			<div id="backdrop" class="center-block">
+				<img src="assets/images/banner_color_white.png" alt="logo" />
+			</div>
+		</div>
+		<div id="wfcontent">
+			<div id="about" class="section">
+				<h3>WorkFrame is a non-profit organization that makes it easier to learn and understand technology.</h3>
+				<br />
+				<br />
+				<div class="embed-responsive embed-responsive-16by9 youtubeembed">
+					<iframe class="embed-responsive" src="https://www.youtube.com/embed/Gc2en3nHxA4" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<br />
+				<br />
+				<p>We operate by starting clubs across different institutions where we make approaching technology simpler for our members. Experienced volunteers can take control of their local WorkFrame club and shape it according to their members' needs.</p>
+				<br />
+				<div class="row">
+					<div class="col-md-4">
+						<h3>Learn</h3> We help you learn things you can use in the real world today: to find a job, write a paper, or just explore your hobbies. Our volunteers will host sessions from time to time to cover such topics in your club.
+					</div>
+					<div class="col-md-4">
+						<h3>Events</h3> We regularly host events like hackathons, cross-college meetups, demos, workshops and seminars. You're welcome to come speak about something you love, teach something new, or just show us what you've been working on.
+					</div>
+					<div class="col-md-4">
+						<h3>Community</h3> Need help? Looking for someone to work on a project with you? Or do you just want to meet some like minded people to chat with? Our community is open to everybody.
+					</div>
+				</div>
+				<br />
+				<br />
+				<p>If WorkFrame isn't in your institution, but you like what we're doing, consider <a onclick="startclub(event)" href="#">starting a club</a> yourself.</p>
+			</div>
+			<hr />
+			<div id="activities" class="section">
+				<p>
+					Our primary mode of communication is IRC.
+					<br /> Server: workfra.me
+					<br /> Channel: #workframe
+					<br />
+					<span class="subtext"><a href="https://chat.mibbit.com/?server=workfra.me&channel=%23workframe" target="_blank" rel="noopener noreferrer">Connect via a web client</a></span>
+					<br />
+				</p>
+				<p>
+					<!-- TODO: add Facebook link -->
+					You can also follow us on Facebook to stay in the loop and know about any upcoming events and announcements.
+				</p>
+				<p>
+				</p>
+			</div>
+			<hr />
+
+			<!-- SOCIAL BUTTONS -->
+			<!-- TODO: Add links to Facebook, Twitter, and Google+ -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1 class="text-center">Contact</h1>
+						<hr>
+					</div>
+					<div class="col-xs-12">
+						<p class="text-center">
+							Follow us on social media to stay in the loop about upcoming events and news
+						</p>
+					</div>
+					<div class="col-xs-4">
+						<a class="btn btn-lg btn-block btn-facebook" href="#" target="_blank" style="padding-left: 0px !important; padding-right: 0px !important; border: none !important"><i class="fa fa-3x fa-facebook-official"></i></a>
+					</div>
+					<div class="col-xs-4">
+						<a class="btn btn-lg btn-block" href="#" target="_blank" style="padding-left: 0px !important; padding-right: 0px !important; border: none !important"><i class="fa fa-3x fa-twitter"></i></a>
+					</div>
+					<div class="col-xs-4">
+						<a class="btn btn-lg btn-block btn-google" href="#" target="_blank" style="padding-left: 0px !important; padding-right: 0px !important; border: none !important"><i class="fa fa-3x fa-google-plus"></i></a>
+					</div>
+					<div class="col-xs-12">
+						<hr>
+					</div>
+				</div>
+			</div>
+
+			<div id="contact" class="section">
+				<p>
+					Have a question? Or just want to say hi? Send us an email at <a href="mailto:hello@workfra.me">hello@workfra.me</a>
+					<br /> If you have any problems, we're happy to help. Contact <a href="mailto:support@workfra.me">support@workfra.me</a>
+					<br />
+					<br /> You can also fill out this contact form instead to reach us. Feel free to make requests or give us feedback
+					<br />
+					<span class="subtext">If you are using this form to request starting a club, please make sure the name of your institution and your email ID are accurate.</span>
+				</p>
+				<form class="form-horizontal" id="contactform" role="form">
+					<div id="formnotify">Complete this form to send the request for a new club. We've already filled out the message field for you.
+						<br />
+					</div>
+					<div id="formerror">
+						<br />
+					</div>
+					<div id="formpass">Form successfully submitted.
+						<br />
+					</div>
+					<br />
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Name :</label>
+						<div class="col-sm-7">
+							<input type="text" placeholder="Eg: John Doe" size="50" id="name" class="form-control" required/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">College :</label>
+						<div class="col-sm-7">
+							<input type="text" placeholder="The institution you belong to" size="50" id="college" class="form-control" required/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Email :</label>
+						<div class="col-sm-7">
+							<input type="email" placeholder="We'll get back to you on this address" size="50" id="email" class="form-control" required/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Message :</label>
+						<div class="col-sm-7">
+							<textarea rows="6" placeholder="Type your message here..." size="500" id="message" class="form-control"></textarea>
+						</div>
+					</div>
+					<div class="loader"><img src="assets/images/loading.gif" /></div>
+					<p>
+						Complete the captcha to submit the form
+						<br />
+						<div class="captchacontainer">
+							<center>
+								<div id="recaptcha"></div>
+							</center>
+						</div>
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>
