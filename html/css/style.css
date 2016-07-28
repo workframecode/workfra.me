@@ -7,11 +7,17 @@ body, html {
 }
 #bgbanner {
 	position: fixed;
-	height: 100vh;
-	width: 100%;
 	z-index: -1;
-	/*For testing. Remove once bg is done. */
 	background-color: #222327;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100vh;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 #home {
 	height: 100vh;
