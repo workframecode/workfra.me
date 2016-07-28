@@ -178,6 +178,9 @@ body, html {
 	border: none;
 	min-height: auto;
 }
+.navbar-toggle{
+	border: none;
+}
 .btn-facebook {
 	color: #2f487c;
 }
