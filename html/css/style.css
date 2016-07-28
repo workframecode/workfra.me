@@ -11,8 +11,7 @@ body, html {
     width: 100%;
     z-index: -1;
     /*For testing. Remove once bg is done. */
-    background: url(https://static.tumblr.com/b32b60130d17d280a22103261f66adc5/jvcheui/wgonphm25/tumblr_static_2hrfdr6yjby8c8gsc4cwwowgs.png);
-    background-size: cover;
+    background-color: #222327;
 }
 #home {
     height: 100vh;
