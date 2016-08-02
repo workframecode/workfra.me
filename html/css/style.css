@@ -193,3 +193,7 @@ body, html {
 .btn-google {
 	color: #d11718;
 }
+
+.img-responsive {
+    margin: 0 auto;
+}
