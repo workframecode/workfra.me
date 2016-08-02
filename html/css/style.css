@@ -92,6 +92,9 @@ body, html {
 	width: 150px;
 	height: 30px;
 }
+.contact-name{
+	font-size: 1.1em;
+}
 #contactform {
 	font-size: 0.9em;
 }
