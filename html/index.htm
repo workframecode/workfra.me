@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope>
 
     <head>
         <meta charset="utf-8">
@@ -94,7 +94,7 @@
                     <br />
                     <br />
                     <div class="embed-responsive embed-responsive-16by9 youtubeembed">
-                        <iframe class="embed-responsive" src="https://www.youtube.com/embed/Gc2en3nHxA4" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="embed-responsive" src="https://www.youtube.com/embed/Gc2en3nHxA4" allowfullscreen></iframe>
                     </div>
                     <br />
                     <br />
@@ -205,7 +205,7 @@
                         <br />
                         <span class="subtext">If you are using this form to request starting a club, please make sure the name of your institution and your email ID are accurate.</span>
                     </p>
-                    <form class="form-horizontal" id="contactform" role="form">
+                    <form class="form-horizontal" id="contactform">
                         <div id="formnotify">
                             Complete this form to send the request for a new club. We've already filled out the message field for you.
                             <br />
@@ -238,19 +238,16 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Message :</label>
                             <div class="col-sm-7">
-                                <textarea rows="6" placeholder="Type your message here..." size="500" id="message" class="form-control"></textarea>
+                                <textarea rows="6" placeholder="Type your message here..." id="message" class="form-control"></textarea>
                             </div>
                         </div>
-                        <div class="loader"><img src="assets/images/loading.gif" /></div>
-                        <p>
+                        <div class="loader"><img src="assets/images/loading.gif" alt="Loading.." /></div>
                             Complete the captcha to submit the form
                             <br />
+                            <br />
                             <div class="captchacontainer">
-                                <center>
-                                    <div id="recaptcha"></div>
-                                </center>
+                                <div id="recaptcha"></div>
                             </div>
-                        </p>
                     </form>
                 </div>
             </div>

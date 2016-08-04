@@ -98,6 +98,9 @@ body, html {
 #contactform {
 	font-size: 0.9em;
 }
+.captchacontainer{
+	text-align: -webkit-center;
+}
 #recaptcha {
 	position: absolute;
 	left: 0;
