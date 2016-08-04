@@ -16,7 +16,7 @@ $(document).ready(function(){
     });
     
     $(window).bind('scroll', function(){
-        $('#bgbanner').css('margin-top', $(window).scrollTop() * - 0.3);
+        $('.bgbanner').css('margin-top', $(window).scrollTop() * - 0.3);
         if (!$('.navbar-toggle').is(':visible')){ //Roughly translates to (if not mobile view)
             $('#backdrop').css('margin-bottom', $(window).scrollTop() * - 1.1);
             $('#backdrop').css('opacity', 1-($(window).scrollTop()/($('#wfcontent').offset().top-(2*$('.navbar').height()))));

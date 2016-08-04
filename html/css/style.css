@@ -5,9 +5,17 @@
 body, html {
     font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
 }
-#bgbanner {
+.bgbanner{
     position: fixed;
-    z-index: -1;
+    z-index: -2;
+}
+#imagebg{
+    height: 100vh;
+    width: 100%;
+    background: url(../assets/images/poster.jpg);
+    background-size: cover;
+}
+#videobg {
     background-color: #222327;
     top: 50%;
     left: 50%;
@@ -112,6 +120,9 @@ body, html {
     margin: 0 auto;
 }
 @media (max-width: 768px) {
+    #imagebg{
+        z-index: -1;
+    }
     .navbar-brand {
         position: absolute;
         left: 50%;
