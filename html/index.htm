@@ -20,7 +20,8 @@
         <meta itemprop="image" content="/assets/images/preview.png" />
 
         <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
-        <meta name="theme-color" content="#222327" <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+        <meta name="theme-color" content="#222327">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
         <link rel="icon" type="image/png" href="assets/images/icons/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="assets/images/icons/favicon-16x16.png" sizes="16x16">
         <link rel="manifest" href="assets/images/icons/manifest.json">
@@ -39,9 +40,9 @@
         <script src="js/bootstrap.js" defer></script>
         <script src="js/ie10-viewport-bug-workaround.js" defer></script>
         <!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
         <script src="js/validation.js" defer></script>
         <script src="js/pagefunctionality.js" defer></script>
         <script src="js/recaptcha.js" defer></script>
@@ -78,7 +79,10 @@
         </nav>
 
         <div class="container pagecontent">
-            <video id="bgbanner" src="assets/videos/banner_background.mp4" autoplay autostart loop></video>
+            <video id="bgbanner" autoplay autostart loop>
+                <source src="assets/videos/banner_background_blurred.mp4" type="video/mp4" />
+                <source src="assets/videos/banner_background_blurred.webm" type="video/webm" />
+            </video>
             <div id="home">
                 <div id="backdrop" class="center-block">
                     <img src="assets/images/banner_color_white.png" alt="logo" />
@@ -146,7 +150,7 @@
                         </div>
                     </div>
                     <br />
-					<br />
+                    <br />
                     <p>
                         Have a question? Or just want to say hi? Send us an email at <a href="mailto:hello@workfra.me">hello@workfra.me</a>
                         <br /> If you have any problems, we're happy to help. Contact <a href="mailto:support@workfra.me">support@workfra.me</a>
