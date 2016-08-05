@@ -10,11 +10,10 @@ body, html{
     z-index: -2;
 }
 #imagebg{
-    height: 100%;
+    height: auto;
     width: 100%;
     background: url(../assets/images/poster.php);
     background-size: cover;
-    background-position: center center;
 }
 
 #home{
