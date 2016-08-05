@@ -5,10 +5,10 @@
 body, html{
     font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
 }
-.bgbanner{
+/*.bgbanner{
     position: fixed;
     z-index: -2;
-}
+}*/
 #imagebg{
     height: 100vh;
     width: 100%;
@@ -16,18 +16,7 @@ body, html{
     background-size: cover;
     background-position: center center;
 }
-#videobg{
-    background-color: #222327;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100vh;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
+
 #home{
     height: 100vh;
     display: flex;
