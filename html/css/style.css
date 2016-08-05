@@ -5,10 +5,10 @@
 body, html{
     font-family: 'Raleway', 'Helvetica', 'Arial', sans-serif;
 }
-/*.bgbanner{
+.bgbanner{
     position: fixed;
     z-index: -2;
-}*/
+}
 #imagebg{
     height: 100vh;
     width: 100%;
