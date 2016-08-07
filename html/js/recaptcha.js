@@ -1,7 +1,7 @@
 var recaptchaResponse=function(response){
 	if (isvalidated()){
 		$('.loader').css('display', 'block');
-		$.post('/recaptcha.php', {response: response, name: $("#name").val(), email: $("#email").val(), college: $("#college").val(), message: $("#message").val()}, function(result){
+		$.post('/server/recaptcha.php', {response: response, name: $("#name").val(), email: $("#email").val(), college: $("#college").val(), message: $("#message").val()}, function(result){
 			$('.loader').css('display', 'none');
 			if (result.success){
 				$('#formpass').fadeIn().css('display','inline-block');
