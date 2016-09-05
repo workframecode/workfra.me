@@ -16,7 +16,6 @@ body, html{
     background-size: cover;
     background-position: center center;
 }
-/* Uncomment in case we find a decent video
 #videobg{
     background-color: #222327;
     top: 50%;
@@ -28,7 +27,7 @@ body, html{
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-}*/
+}
 #home{
     height: 100vh;
     display: flex;
