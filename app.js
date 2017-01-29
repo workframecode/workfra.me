@@ -1,4 +1,5 @@
 var express = require('express'),
+	bodyParser = require('body-parser'),
 	request = require('request');
 
 var config = require('./server/config.json');
@@ -6,6 +7,10 @@ var config = require('./server/config.json');
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 app.get('/', function(req, res) {
 	res.sendFile('index.htm', {root: __dirname + '/public'});
