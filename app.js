@@ -58,6 +58,7 @@ app.post('/recaptcha', function (req, res) {
 				});
 			// Got a valid response, fork validation one level deeper now
 			} else {
+				body = JSON.parse(body);
 				if (!body.success) {
 					res.status(200).send({
 						success: false,
