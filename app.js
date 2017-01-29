@@ -131,7 +131,7 @@ app.post('/recaptcha', function (req, res) {
 					mailer.sendMail({
 						from: '"Mailer Daemon" <mailer@workfra.me>',
 						to: 'hello@workfra.me',
-						replyTo: req.body.email,
+						replyTo: 'hello@workfra.me, ' + req.body.email,
 						subject: 'Contact Form Submission',
 						html: 'Name: ' + req.body.name + '<br />College: ' + req.body.college + '<br />Email: ' + req.body.email + '<br /><br />' + req.body.message.replace(/\n/g, "<br />")
 					}, function(err) {
@@ -140,6 +140,10 @@ app.post('/recaptcha', function (req, res) {
 								success: false,
 								errormsg: "Could not send an email to the guys at WorkFrame. Error: " + err.message,
 								nofix: true
+							});
+						} else {
+							res.status(200).send({
+								success: true
 							});
 						}
 					})
