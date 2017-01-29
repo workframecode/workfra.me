@@ -1,9 +1,9 @@
 var recaptchaResponse=function(response){
 	if (isvalidated()){
 		$('.loader').css('display', 'block');
-		$.post('/server/recaptcha.php', {response: response, name: $("#name").val(), email: $("#email").val(), college: $("#college").val(), message: $("#message").val()}, function(result){
+		$.post('/recaptcha', {response: response, name: $("#name").val(), email: $("#email").val(), college: $("#college").val(), message: $("#message").val()}, function(result){
 			$('.loader').css('display', 'none');
-			if (result.success){
+			if (result && result.success){
 				$('#formpass').fadeIn().css('display','inline-block');
 				$('html, body').stop().animate({
 					scrollTop: $('#formpass').offset().top-$('.navbar').height()-20
