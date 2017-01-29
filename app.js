@@ -1,11 +1,12 @@
 var express = require('express'),
 	bodyParser = require('body-parser'),
 	nodemailer = require('nodemailer'),
+	smtpTransport = require('nodemailer-smtp-transport'),
 	request = require('request');
 
 var config = require('./server/config.json');
 
-var mailer = nodemailer.createTransport({
+var mailer = nodemailer.createTransport(smtpTransport({
 	host: config.mailer.host,
 	port: config.mailer.port,
 	secure: true,
@@ -13,7 +14,7 @@ var mailer = nodemailer.createTransport({
 		user: config.mailer.username,
 		pass: config.mailer.password
 	}
-});
+}));
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
