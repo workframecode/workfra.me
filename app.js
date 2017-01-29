@@ -16,18 +16,13 @@ app.get('/', function(req, res) {
 	res.sendFile('index.htm', {root: __dirname + '/public'});
 });
 app.post('/recaptcha', function(req, res) {
-	console.log({
-		secret: config.recaptcha.secret,
-		response: req.body.response,
-		remoteip: req.headers
-	});
 	request({
 		url: 'https://www.google.com/recaptcha/api/siteverify',
 		method: 'POST',
-		json: {
+		form: {
 			secret: config.recaptcha.secret,
 			response: req.body.response,
-			remoteip: req.headers['X-Real-IP']
+			remoteip: req.headers['x-forwarded-for']
 		}
 	}, function(err, resp, body) {
 		console.log('ERR', err)
