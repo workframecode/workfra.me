@@ -1,0 +1,22 @@
+{
+  "name": "workfra.me",
+  "version": "1.0.0",
+  "description": "Source code of the WorkFrame website.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/workframecode/workfra.me.git"
+  },
+  "author": "Arvind Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/workframecode/workfra.me/issues"
+  },
+  "homepage": "https://workfra.me",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}

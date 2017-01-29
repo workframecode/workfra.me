@@ -1,5 +1,8 @@
-# Ignore server related backend scripts. May contain secret keys and config files
+# Ignore host/server specific files. May contain secret keys and config files
 server/
 
 # Assets folder will be cloned separately from the assets repository
 assets/
+
+# Installed or generated
+node_modules/
