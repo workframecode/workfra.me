@@ -19,7 +19,7 @@ app.post('/recaptcha', function(req, res) {
 	console.log({
 		secret: config.recaptcha.secret,
 		response: req.body.response,
-		remoteip: req.headers['X-Real-IP']
+		remoteip: req.headers
 	});
 	request({
 		url: 'https://www.google.com/recaptcha/api/siteverify',
@@ -31,7 +31,7 @@ app.post('/recaptcha', function(req, res) {
 		}
 	}, function(err, resp, body) {
 		console.log('ERR', err)
-		console.log('RESP', resp)
+		console.log('RESP', resp.statusCode)
 		console.log('BODY', body)
 	});
 });
