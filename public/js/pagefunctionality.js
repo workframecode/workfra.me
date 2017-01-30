@@ -14,14 +14,14 @@ $(document).ready(function(){
             }, 700);
         }
     });
-    
+
     $(window).bind('scroll', function(){
         $('.bgbanner').css('margin-top', $(window).scrollTop() * - 0.3);
         if (!$('.navbar-toggle').is(':visible')){ //Roughly translates to (if not mobile view)
             $('#backdrop').css('margin-bottom', $(window).scrollTop() * - 1.1);
             $('#backdrop').css('opacity', 1-($(window).scrollTop()/($('#wfcontent').offset().top-(2*$('.navbar').height()))));
         }
-        
+
         if ($(window).scrollTop() > 0){
             if (!$('.navbar').hasClass('navdown'))
                 swapbar(true);
@@ -30,7 +30,7 @@ $(document).ready(function(){
             if ($('.navbar').hasClass('navdown'))
                 swapbar(false);
         }
-        
+
         if ($(window).scrollTop() >= ($('#wfcontent').offset().top-(2*$('.navbar').height()))){
             if ($('.navbar-brand .logo').css('opacity')=='0'){
                 $('.navbar-brand .logo').animate({
@@ -45,7 +45,7 @@ $(document).ready(function(){
                 }, 200);
             }
         }
-        
+
         var activetab=$('.tablink')[0];
         $('.tablink').each(function(){
             if ($(this.getAttribute('href')).offset().top-(2*$('.navbar').height())<=$(window).scrollTop()){
@@ -54,19 +54,19 @@ $(document).ready(function(){
         });
         setactivetab(activetab);
     });
-    
+
     $('.form-control').bind('input', function(event){
         $('#formnotify').fadeOut();
         $('#formerror').fadeOut();
         $(this).parent().parent().removeClass("has-error has-success");
         $("#"+$(this).attr('id')+"error").remove();
     });
-    
+
     validations['name']=[valtract,stdlength,nospecial];
     validations['college']=[valtract,colempty,max128];
     validations['email']=[valtract,empty,max64,emailvalidate];
     validations['message']=[valtract,empty,max512];
-    
+
     $('body').on('blur', '.form-control', function(){
         $(this).parent().parent().removeClass("has-error has-success");
         $("#"+$(this).attr('id')+"error").remove();
@@ -86,7 +86,7 @@ $(document).ready(function(){
         msg.pass=true;
         msg.error="";
     });
-    
+
     $(window).resize(function(){
         if ($('.navbar-toggle').is(':visible')){ //Roughly translates to (if mobile view)
             $('#navbar').css('marginLeft', '100vw');
@@ -140,7 +140,7 @@ var setactivetab=function(tab){
     }
 };
 
-var startclub=function(event){
+var startClub=function(event){
     event.preventDefault();
     $('#message').val('Hello,\n\nI like the initiative that WorkFrame is taking and would really appreciate it if you would consider involving my college as a part of the organization.\n\nThanks');
     $('#formnotify').css('display','inline-block');
@@ -149,7 +149,7 @@ var startclub=function(event){
     }, 700);
 };
 
-var isvalidated=function(){    
+var isvalidated=function(){
     $(".validating").remove();
     $(".has-error").removeClass("has-error");
     $(".has-success").removeClass("has-success");
@@ -170,13 +170,33 @@ var isvalidated=function(){
     }
     msg.pass=true;
     msg.error="";
-    
+
     if ($(".error").length){ //Oops
         return false;
     }
     else{ //All clear
         return true;
     }
+};
+
+var showSlackInvite=function(event) {
+    event.preventDefault();
+    $(".slackinvitebox").css("display", "block");
+    $(".overlay").css("display", "block");
+    $(".slackinvitebox").animate({opacity: 1}, 500);
+    $(".overlay").animate({opacity: 0.5}, 500);
+};
+var hideSlackInvite=function() {
+    $(".slackinvitebox").animate({opacity: 0}, 500, function() {
+        $(".slackinvitebox").css("display", "none");
+    });
+    $(".overlay").animate({opacity: 0}, 500, function() {
+        $(".overlay").css("display", "none");
+    });
+};
+var getSlackInvite=function(event) {
+    event.preventDefault();
+    $(".slackinvitebox").show(500);
 };
 
 //Stuff for Google anaylytics

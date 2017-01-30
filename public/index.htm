@@ -30,7 +30,7 @@
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/style.css?nocache" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <title>WorkFrame</title>
 
@@ -114,7 +114,7 @@
                 </div>
                 <br />
                 <br />
-                <p>If WorkFrame isn't in your institution, but you like what we're doing, consider <a onclick="startclub(event)" href="#">starting a club</a> yourself.</p>
+                <p>If WorkFrame isn't in your institution, but you like what we're doing, consider <a onclick="startClub(event)" href="#">starting a club</a> yourself.</p>
             </div>
             <hr />
             <div id="contact" class="section">
@@ -124,7 +124,7 @@
                     If you're not a part of <a href="https://workframeorg.slack.com" target="_blank" rel="noopener noreferrer">our slack team</a>, you'll get an invite after applying through your college's page in the list below.
                     <br />
                     <br />
-                    <span class="subtext">If your college isn't on the list, but you'd like contribute anyway, <a onclick="getslackinvite(event)" href="#">send us your email</a> to get an invite.</span>
+                    <span class="subtext">If your college isn't on the list, but you'd like to contribute anyway, <a onclick="showSlackInvite(event)" href="#">send us your email</a> to get an invite.</span>
                     <br />
                     <br />
                 </p>
@@ -249,6 +249,17 @@
             </div>
         </div>
     </div>
+    <div class="slackinvitebox popup">
+        <i class="fa fa-times" aria-hidden="true" onclick="hideSlackInvite()"></i>
+        Enter your email to get an invite
+        <br />
+        <br />
+        <input type="email" placeholder="Email address" size="50" id="slackemail" class="form-control" />
+        <div class="captchacontainer">
+            <div id="recaptcha"></div>
+        </div>
+    </div>
+    <div class="overlay" onclick="hideSlackInvite()"></div>
 </body>
 
 </html>
