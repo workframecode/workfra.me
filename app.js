@@ -1,5 +1,6 @@
 var express = require('express'),
 	bodyParser = require('body-parser'),
+	fs = require('fs'),
 	nodemailer = require('nodemailer'),
 	smtpTransport = require('nodemailer-smtp-transport'),
 	request = require('request');
@@ -25,6 +26,19 @@ app.use(bodyParser.urlencoded({
 
 app.get('/', function (req, res) {
 	res.sendFile('index.htm', { root: __dirname + '/public' });
+});
+
+app.get('/imagebg', function (req, res) {
+	fs.readdir('public/assets/images/posters/', function(err, files) {
+		if (err) {
+			return res.status(400).send({error: true, msg: "Error while getting posters for background image"});
+		}
+		res.sendFile(files[Math.floor(Math.random() * files.length)], { root: __dirname + '/public/assets/images/posters' });
+	});
+});
+
+app.post('/slackInvite', function(req, res) {
+	//https://slack.com/api/users.admin.invite?token=&email=&channels=
 });
 
 // Why so much validation? Because I know some smartasses won't mind wasting time breaking into this.

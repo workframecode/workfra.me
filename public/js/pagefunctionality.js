@@ -181,14 +181,22 @@ var isvalidated=function(){
 
 var showSlackInvite=function(event) {
     event.preventDefault();
-    $(".slackinvitebox").css("display", "block");
-    $(".overlay").css("display", "block");
-    $(".slackinvitebox").animate({opacity: 1}, 500);
-    $(".overlay").animate({opacity: 0.5}, 500);
+    if (window.grecaptcha) {
+        $(".slackinvitebox").css("display", "block");
+        $(".overlay").css("display", "block");
+        $(".slackinvitebox").animate({opacity: 1}, 500);
+        $(".overlay").animate({opacity: 0.5}, 500);
+        var widget2=grecaptcha.render('srecaptcha', {
+            sitekey: '6Le3jCITAAAAAHbgLHizHXcm8pV2wUycC-J2W0xm',
+            callback: recaptchaResponse,
+            theme: 'light'
+        });
+    }
 };
 var hideSlackInvite=function() {
     $(".slackinvitebox").animate({opacity: 0}, 500, function() {
         $(".slackinvitebox").css("display", "none");
+        $(".srecaptcha").html("");
     });
     $(".overlay").animate({opacity: 0}, 500, function() {
         $(".overlay").css("display", "none");

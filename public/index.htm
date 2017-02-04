@@ -124,7 +124,7 @@
                     If you're not a part of <a href="https://workframeorg.slack.com" target="_blank" rel="noopener noreferrer">our slack team</a>, you'll get an invite after applying through your college's page in the list below.
                     <br />
                     <br />
-                    <span class="subtext">If your college isn't on the list, but you'd like to contribute anyway, <a onclick="showSlackInvite(event)" href="#">send us your email</a> to get an invite.</span>
+                    <span class="subtext">If your college isn't on the list, but you'd like to contribute anyway, <a onclick="showSlackInvite(event)" href="#">click here</a> to get an invite.</span>
                     <br />
                     <br />
                 </p>
@@ -251,13 +251,16 @@
     </div>
     <div class="slackinvitebox popup">
         <i class="fa fa-times" aria-hidden="true" onclick="hideSlackInvite()"></i>
-        Enter your email to get an invite
+        Type in your email. An invite will be sent to your inbox to join our slack.
         <br />
         <br />
-        <input type="email" placeholder="Email address" size="50" id="slackemail" class="form-control" />
+        <input type="email" placeholder="Enter your email" size="50" id="slackemail" class="form-control" />
+        <br />
         <div class="captchacontainer">
-            <div id="recaptcha"></div>
+            <div id="srecaptcha"></div>
         </div>
+        <br />
+        Complete the captcha to get your invite.
     </div>
     <div class="overlay" onclick="hideSlackInvite()"></div>
 </body>
