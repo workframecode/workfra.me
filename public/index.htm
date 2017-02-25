@@ -121,10 +121,7 @@
                 <p>
                     <i class="fa fa-slack" aria-hidden="true"></i> Our primary mode of communication is Slack.
                     <br />
-                    If you're not a part of <a href="https://workframeorg.slack.com" target="_blank" rel="noopener noreferrer">our slack team</a>, you'll get an invite after applying through your college's page in the list below.
-                    <br />
-                    <br />
-                    <span class="subtext">If your college isn't on the list, but you'd like to contribute anyway, <a onclick="showSlackInvite(event)" href="#">click here</a> to get an invite.</span>
+                    If you're not a part of our slack team, <a onclick="showSlackInvite(event)" href="#">click here</a> to get an invite.</span>
                     <br />
                     <br />
                 </p>
@@ -238,7 +235,7 @@
                             <textarea rows="6" placeholder="Type your message here..." id="message" class="form-control"></textarea>
                         </div>
                     </div>
-                    <div class="loader"><img src="assets/images/loading.gif" alt="Loading.." /></div>
+                    <div class="loader"><img src="assets/images/extra/loading.gif" alt="Loading.." /></div>
                     Complete the captcha to submit the form
                     <br />
                     <br />
@@ -251,7 +248,17 @@
     </div>
     <div class="slackinvitebox popup">
         <i class="fa fa-times" aria-hidden="true" onclick="hideSlackInvite()"></i>
-        Type in your email. An invite will be sent to your inbox to join our slack.
+        <span class="slackheader">
+            <a href="https://workframeorg.slack.com" target="_blank" rel="noopener noreferrer">
+                <img class="slacklogo" src="assets/images/extra/slack.png" alt="Slack Logo" />
+                https://workframeorg.slack.com
+            </a>
+        </span>
+        <br />
+        You will automatically get a slack invite when you register through your college's page (Look at our list of associated colleges).
+        <br />
+        <br />
+        Type in your email here only if your college is not in our list, but you'd like to contribute anyway. An invite will be sent to your inbox to join our slack.
         <br />
         <br />
         <input type="email" placeholder="Enter your email" size="50" id="slackemail" class="form-control" />
