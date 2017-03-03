@@ -200,14 +200,14 @@
                     <span class="subtext">If you are using this form to request starting a club, please make sure the name of your institution and your email ID are accurate.</span>
                 </p>
                 <form class="form-horizontal" id="contactform">
-                    <div id="formnotify">
+                    <div class="formnotify">
                         Complete this form to send the request for a new club. We've already filled out the message field for you.
                         <br />
                     </div>
-                    <div id="formerror">
+                    <div class="formerror">
                         <br />
                     </div>
-                    <div id="formpass">Form successfully submitted.
+                    <div class="formpass">Form successfully submitted.
                         <br />
                     </div>
                     <br />
@@ -235,7 +235,7 @@
                             <textarea rows="6" placeholder="Type your message here..." id="message" class="form-control"></textarea>
                         </div>
                     </div>
-                    <div class="loader"><img src="assets/images/extra/loading.gif" alt="Loading.." /></div>
+                    <div class="loader"><img src="assets/images/extra/loading.svg" alt="Loading.." /></div>
                     Complete the captcha to submit the form
                     <br />
                     <br />
@@ -267,7 +267,18 @@
             <div id="srecaptcha"></div>
         </div>
         <br />
-        Complete the captcha to get your invite.
+        <div class="formnotify">
+            Complete the captcha to get your invite.
+            <br />
+        </div>
+        <div class="formerror">
+            <br />
+        </div>
+        <div class="formpass">
+            Invite successfully sent. Check your inbox.
+            <br />
+        </div>
+        <div class="loader"><img src="assets/images/extra/loading.svg" alt="Loading.." /></div>
     </div>
     <div class="overlay" onclick="hideSlackInvite()"></div>
 </body>

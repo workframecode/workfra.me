@@ -85,7 +85,19 @@ body, html{
 #sidebartitle{
     display: none;
 }
-#formnotify, #formpass{
+.formnotify{
+    display: none;
+    color: #808000;
+    padding: 10px;
+    border: solid 1px;
+    background-color: rgba(255, 255, 0, 0.1);
+    margin: 10px;
+    margin-bottom: 30px;
+}
+.slackinvitebox .formnotify{
+    display: block;
+}
+.formpass{
     display: none;
     color: green;
     padding: 10px;
@@ -94,7 +106,7 @@ body, html{
     margin: 10px;
     margin-bottom: 30px;
 }
-#formerror{
+.formerror{
     display: none;
     color: red;
     padding: 10px;
@@ -126,9 +138,9 @@ body, html{
     display: none;
     opacity: 0;
     position: fixed;
-    top: calc(50% - 240px);
+    top: calc(50% - 250px);
     right: calc(50% - 250px);
-    height: 480px;
+    height: auto;
     width: 500px;
     z-index: 1040;
     background: #c0c0c0;

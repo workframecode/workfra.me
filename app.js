@@ -37,12 +37,127 @@ app.get('/imagebg', function (req, res) {
 	});
 });
 
-app.post('/slackInvite', function(req, res) {
-	//https://slack.com/api/users.admin.invite?token=&email=&channels=
+app.post('/slackinviterecaptcha', function(req, res) {
+	if (req.body.response) {
+		request({
+			url: 'https://www.google.com/recaptcha/api/siteverify',
+			method: 'POST',
+			form: {
+				secret: config.recaptcha.secret,
+				response: req.body.response,
+				remoteip: req.headers['x-forwarded-for']
+			}
+		}, function (err, resp, body) {
+			if (err) {
+				res.status(200).send({
+					success: false,
+					errormsg: "Could not connect to recaptcha API",
+					nofix: true
+				});
+			} else if (resp.statusCode != 200) {
+				res.status(200).send({
+					success: false,
+					errormsg: "Recaptcha API returned status " + resp.statusCode,
+					nofix: true
+				});
+			} else if (!body) {
+				res.status(200).send({
+					success: false,
+					errormsg: "Recaptcha API gave an empty response",
+					nofix: true
+				});
+			// Got a valid response, fork validation one level deeper now
+			} else {
+				body = JSON.parse(body);
+				if (!body.success) {
+					res.status(200).send({
+						success: false,
+						errormsg: "You did not pass the captcha challenge. Try again",
+						nofix: false
+					});
+				} else if (!req.body.email) {
+					res.status(200).send({
+						success: false,
+						errormsg: "Email is a required field",
+						nofix: false
+					});
+				} else if (req.body.email.length < 2 || req.body.email.length > 64 || (!(/\S+@\S+\.\S+/).test(req.body.email))) {
+					res.status(200).send({
+						success: false,
+						errormsg: "Email field does not meet validation criteria. Please use the website to send this request",
+						nofix: true
+					});
+				// Yes, I know this is bad practice and no, I don't care.
+				} else if (!(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(req.body.email)) {
+					res.status(200).send({
+						success: false,
+						errormsg: "You have a really weird email. Please try again with something that looks more like it's from this planet",
+						nofix: false
+					});
+				} else if (config.junkMailProviders.indexOf(req.body.email.split('@').slice(1).join('@')) != -1) {
+					res.status(200).send({
+						success: false,
+						errormsg: "That mail provider is a known public mailbox service. Please use your actual email. We promise not to spam you or do anything else malicious with it. Pinky swear.",
+						nofix: false
+					});
+				} else {
+					request({
+						url: 'https://slack.com/api/users.admin.invite',
+						method: 'GET',
+						qs: {
+							token: config.slackAPI.token,
+							email: req.body.email,
+							channels: config.slackAPI.channels
+						}
+					}, function (err, resp, body) {
+						if (err) {
+							res.status(200).send({
+								success: false,
+								errormsg: "Could not connect to slack API",
+								nofix: true
+							});
+						} else if (resp.statusCode != 200) {
+							res.status(200).send({
+								success: false,
+								errormsg: "Slack API returned status " + resp.statusCode,
+								nofix: true
+							});
+						} else if (!body) {
+							res.status(200).send({
+								success: false,
+								errormsg: "Slack API gave an empty response",
+								nofix: true
+							});
+						// Got a valid response, fork validation one level deeper now
+						} else {
+							body = JSON.parse(body);
+							if (!body.ok) {
+								res.status(200).send({
+									success: false,
+									errormsg: "We could not send you an invite. The email you've entered may have been blacklisted or already invited previously.",
+									nofix: false
+								});
+							} else {
+								res.status(200).send({
+									success: true
+								});
+							}
+						}
+					});
+				}
+			}
+		});
+	} else {
+		res.status(200).send({
+			success: false,
+			errormsg: "No recaptcha response received. You cannot view this directly with a browser or similar client",
+			nofix: true
+		});
+	}
 });
 
 // Why so much validation? Because I know some smartasses won't mind wasting time breaking into this.
-app.post('/recaptcha', function (req, res) {
+app.post('/contactformrecaptcha', function (req, res) {
 	if (req.body.response) {
 		request({
 			url: 'https://www.google.com/recaptcha/api/siteverify',
@@ -114,7 +229,7 @@ app.post('/recaptcha', function (req, res) {
 				} else if (config.junkMailProviders.indexOf(req.body.email.split('@').slice(1).join('@')) != -1) {
 					res.status(200).send({
 						success: false,
-						errormsg: "That mail provider is a known public mailbox service. Please use your actual personal email. We promise not to spam you or do anything else malicious with it. Pinky swear.",
+						errormsg: "That mail provider is a known public mailbox service. Please use your actual email. We promise not to spam you or do anything else malicious with it. Pinky swear.",
 						nofix: false
 					});
 				} else if (!req.body.college) {

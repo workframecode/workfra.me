@@ -56,8 +56,9 @@ $(document).ready(function(){
     });
 
     $('.form-control').bind('input', function(event){
-        $('#formnotify').fadeOut();
-        $('#formerror').fadeOut();
+        $('#contactform .formnotify').fadeOut();
+        $('.formerror').fadeOut();
+        $('.formpass').fadeOut();
         $(this).parent().parent().removeClass("has-error has-success");
         $("#"+$(this).attr('id')+"error").remove();
     });
@@ -67,7 +68,7 @@ $(document).ready(function(){
     validations['email']=[valtract,empty,max64,emailvalidate];
     validations['message']=[valtract,empty,max512];
 
-    $('body').on('blur', '.form-control', function(){
+    $('body').on('blur', '#contactform .form-control', function(){
         $(this).parent().parent().removeClass("has-error has-success");
         $("#"+$(this).attr('id')+"error").remove();
         msg.val=validations[$(this).attr('id')][0]($(this).attr('id'));
@@ -143,9 +144,9 @@ var setactivetab=function(tab){
 var startClub=function(event){
     event.preventDefault();
     $('#message').val('Hello,\n\nI like the initiative that WorkFrame is taking and would really appreciate it if you would consider involving my college as a part of the organization.\n\nThanks');
-    $('#formnotify').css('display','inline-block');
+    $('.formnotify').css('display','inline-block');
     $('html, body').stop().animate({
-        scrollTop: $('#formnotify').offset().top-$('.navbar').height()-20
+        scrollTop: $('.formnotify').offset().top-$('.navbar').height()-20
     }, 700);
 };
 
@@ -186,11 +187,7 @@ var showSlackInvite=function(event) {
         $(".overlay").css("display", "block");
         $(".slackinvitebox").animate({opacity: 1}, 500);
         $(".overlay").animate({opacity: 0.5}, 500);
-        var widget2=grecaptcha.render('srecaptcha', {
-            sitekey: '6Le3jCITAAAAAHbgLHizHXcm8pV2wUycC-J2W0xm',
-            callback: recaptchaResponse,
-            theme: 'light'
-        });
+       recaptchaCallback('srecaptcha');
     }
 };
 var hideSlackInvite=function() {
