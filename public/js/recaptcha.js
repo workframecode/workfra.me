@@ -1,3 +1,5 @@
+var widgetmap = {};
+
 var recaptchaResponse=function(cid) {
 	if (cid == 'recaptcha') {
 		return function(response) {
@@ -16,7 +18,7 @@ var recaptchaResponse=function(cid) {
 						setTimeout(function(){
 							$('#contactform .formpass').fadeOut();
 						},3000);
-						grecaptcha.reset();
+						grecaptcha.reset(widgetmap[cid]);
 					}
 					else{
 						if (result.errormsg){
@@ -27,7 +29,7 @@ var recaptchaResponse=function(cid) {
 								$('html, body').stop().animate({
 									scrollTop: $('#contactform .formerror').offset().top-$('.navbar').height()-20
 								}, 700);
-								grecaptcha.reset();
+								grecaptcha.reset(widgetmap[cid]);
 							}
 							else{
 								$('#contactform .formerror').html(result.errormsg);
@@ -35,7 +37,7 @@ var recaptchaResponse=function(cid) {
 								$('html, body').stop().animate({
 									scrollTop: $('#contactform .formerror').offset().top-$('.navbar').height()-20
 								}, 700);
-								grecaptcha.reset();
+								grecaptcha.reset(widgetmap[cid]);
 							}
 						}
 						else{
@@ -44,7 +46,7 @@ var recaptchaResponse=function(cid) {
 							$('html, body').stop().animate({
 								scrollTop: $('#contactform .formerror').offset().top-$('.navbar').height()-20
 							}, 700);
-							grecaptcha.reset();
+							grecaptcha.reset(widgetmap[cid]);
 						}
 					}
 				});
@@ -55,7 +57,7 @@ var recaptchaResponse=function(cid) {
 				$('html, body').stop().animate({
 					scrollTop: $('#contactform .formerror').offset().top-$('.navbar').height()-20
 				}, 700);
-				grecaptcha.reset();
+				grecaptcha.reset(widgetmap[cid]);
 			}
 		};
 	} else if (cid == 'srecaptcha') {
@@ -70,26 +72,26 @@ var recaptchaResponse=function(cid) {
 					setTimeout(function(){
 						hideSlackInvite();
 					},3000);
-					grecaptcha.reset();
+					grecaptcha.reset(widgetmap[cid]);
 				}
 				else{
 					if (result.errormsg){
 						if (result.nofix){
-							$('.formerror').html('Something went wrong. If you know of an alternate way to reach the developers, tell them about this error. You can also check the console log for more details.');
+							$('.slackinvitebox .formerror').html('Something went wrong. If you know of an alternate way to reach the developers, tell them about this error. You can also check the console log for more details.');
 							console.log('Backend error while submitting slack invite request: '+result.errormsg);
-							$('.formerror').fadeIn().css('display','inline-block');
-							grecaptcha.reset();
+							$('.slackinvitebox .formerror').fadeIn().css('display','inline-block');
+							grecaptcha.reset(widgetmap[cid]);
 						}
 						else{
-							$('.formerror').html(result.errormsg);
-							$('.formerror').fadeIn().css('display','inline-block');
-							grecaptcha.reset();
+							$('.slackinvitebox .formerror').html(result.errormsg);
+							$('.slackinvitebox .formerror').fadeIn().css('display','inline-block');
+							grecaptcha.reset(widgetmap[cid]);
 						}
 					}
 					else{
-						$('.formerror').html('You did not answer the captcha right. Try again.');
-						$('.formerror').fadeIn().css('display','inline-block');
-						grecaptcha.reset();
+						$('.slackinvitebox .formerror').html('You did not answer the captcha right. Try again.');
+						$('.slackinvitebox .formerror').fadeIn().css('display','inline-block');
+						grecaptcha.reset(widgetmap[cid]);
 					}
 				}
 			});
@@ -103,9 +105,10 @@ var recaptchaCallback=function(captchaid){
 	if (!captchaid) {
 		captchaid = 'recaptcha';
 	}
-	grecaptcha.render(captchaid, {
+	var widgetid = grecaptcha.render(captchaid, {
 		sitekey: '6Le3jCITAAAAAHbgLHizHXcm8pV2wUycC-J2W0xm',
 		callback: recaptchaResponse(captchaid),
 		theme: 'light'
 	});
+	widgetmap[captchaid] = widgetid;
 }
