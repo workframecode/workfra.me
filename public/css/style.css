@@ -106,6 +106,9 @@ body, html{
     margin: 10px;
     margin-bottom: 30px;
 }
+.formpass a{
+    cursor: pointer;
+}
 .formerror{
     display: none;
     color: red;

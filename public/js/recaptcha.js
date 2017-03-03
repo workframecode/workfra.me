@@ -69,9 +69,6 @@ var recaptchaResponse=function(cid) {
 				if (result && result.success){
 					$('.slackinvitebox .formpass').fadeIn().css('display','inline-block');
 					$('#slackemail').val('');
-					setTimeout(function(){
-						hideSlackInvite();
-					},3000);
 					grecaptcha.reset(widgetmap[cid]);
 				}
 				else{
