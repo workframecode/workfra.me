@@ -5,7 +5,7 @@ var express = require('express'),
 	smtpTransport = require('nodemailer-smtp-transport'),
 	request = require('request');
 
-var config = require('./server/config.json');
+var config = require('../configurations/workfra.me.config.json');
 
 var mailer = nodemailer.createTransport(smtpTransport({
 	host: config.mailer.host,

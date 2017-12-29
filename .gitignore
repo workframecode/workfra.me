@@ -1,6 +1,3 @@
-# Ignore host/server specific files. May contain secret keys and config files
-server/
-
 # Assets folder will be cloned separately from the assets repository
 assets/
 
