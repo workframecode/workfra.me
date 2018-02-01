@@ -60,11 +60,11 @@ var recaptchaResponse=function(cid) {
 				grecaptcha.reset(widgetmap[cid]);
 			}
 		};
-	} else if (cid == 'srecaptcha') {
+	} else if (cid == 'srecaptcha' || cid == 'wrecaptcha') {
 		return function(response) {
 			$('.slackinvitebox .loader').css('display', 'block');
 			$('.slackinvitebox .formnotify').fadeOut();
-			$.post('/slackinviterecaptcha', {response: response, email: $("#slackemail").val()}, function(result){
+			$.post('/slackinviterecaptcha', {response: response, email: (cid == 'srecaptcha' ? $("#slackemail").val() : $("#wfemail").val()), college: (cid == 'srecaptcha' ? false : $("#wfinvitecodename").html())}, function(result){
 				$('.slackinvitebox .loader').css('display', 'none');
 				if (result && result.success){
 					$('.slackinvitebox .formpass').fadeIn().css('display','inline-block');

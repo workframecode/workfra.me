@@ -77,10 +77,13 @@ body, html{
     font-size: 0.8em;
 }
 .address{
-    color: #5080a0;
     font-size: 0.9em;
     text-decoration: none;
     display: inline-block;
+}
+.joinwf{
+    font-weight: bold;
+    font-size: 1.2em;
 }
 #sidebartitle{
     display: none;
@@ -169,6 +172,16 @@ body, html{
     height: 2em;
     width: 2em;
     margin-right: 0.5em;
+}
+#wfinviteimage{
+    height: 12em;
+}
+#wfinvitetext{
+    font-size: 1.25em;
+    font-weight: bold;
+}
+#wfinvitecodename{
+    display: none;
 }
 .youtubeembed{
     max-width: 560px;
@@ -276,6 +289,9 @@ body, html{
 }
 .navbar-toggle{
     border: none;
+}
+.email-logo{
+    font-size: 0.9em;
 }
 .btn-facebook{
     color: #2f487c;

@@ -100,6 +100,24 @@ $(document).ready(function(){
     });
 });
 
+var colleges = [
+    {
+        codename: 'drait',
+        shortname: 'Dr. AIT',
+        fullname: 'Dr. Ambedkar Institute of Technology'
+    },
+    {
+        codename: 'nhce',
+        shortname: 'NHCE',
+        fullname: 'New Horizon College of Engineering'
+    },
+    {
+        codename: 'pesu',
+        shortname: 'PESU',
+        fullname: 'PES University'
+    },
+]
+
 var swapbar=function(fromdefault){
     if (fromdefault){
         $('.navbar').animate({
@@ -180,28 +198,34 @@ var isvalidated=function(){
     }
 };
 
-var showSlackInvite=function(event) {
+var showSlackInvite=function(event, college) {
+    var popup = '.noinvite';
+    if (college) {
+        collobj = colleges[college - 1];
+        popup = '.wfinvite';
+        $("#wfinviteimage").attr('src', 'assets/images/dp/' + collobj.codename + '.jpg');
+        $("#wfinvitetext").html('WorkFrame ' + collobj.shortname);
+        $("#wfinvitecodename").html(collobj.codename);
+    }
     event.preventDefault();
     if (window.grecaptcha) {
-        $(".slackinvitebox").css("display", "block");
+        $(popup).css("display", "block");
         $(".overlay").css("display", "block");
-        $(".slackinvitebox").animate({opacity: 1}, 500);
+        $(popup).animate({opacity: 1}, 500);
         $(".overlay").animate({opacity: 0.5}, 500);
        recaptchaCallback('srecaptcha');
+       recaptchaCallback('wrecaptcha');
     }
 };
 var hideSlackInvite=function() {
     $(".slackinvitebox").animate({opacity: 0}, 500, function() {
         $(".slackinvitebox").css("display", "none");
         $(".srecaptcha").html("");
+        $(".wrecaptcha").html("");
     });
     $(".overlay").animate({opacity: 0}, 500, function() {
         $(".overlay").css("display", "none");
     });
-};
-var getSlackInvite=function(event) {
-    event.preventDefault();
-    $(".slackinvitebox").show(500);
 };
 
 //Stuff for Google anaylytics
