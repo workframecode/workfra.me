@@ -101,13 +101,17 @@ app.post('/slackinviterecaptcha', function(req, res) {
 						nofix: false
 					});
 				} else {
+					var channels = config.slackAPI.channels.common;
+					if (req.body.college && config.slackAPI.channels.colleges[req.body.college]) {
+						channels.push(config.slackAPI.channels.colleges[req.body.college]);
+					}
 					request({
 						url: 'https://slack.com/api/users.admin.invite',
 						method: 'GET',
 						qs: {
 							token: config.slackAPI.token,
 							email: req.body.email,
-							channels: config.slackAPI.channels
+							channels: channels.join(',')
 						}
 					}, function (err, resp, body) {
 						if (err) {
@@ -134,7 +138,7 @@ app.post('/slackinviterecaptcha', function(req, res) {
 							if (!body.ok) {
 								res.status(200).send({
 									success: false,
-									errormsg: "We could not send you an invite. The email you've entered may have been blacklisted or already invited previously.",
+									errormsg: "We could not send you an invite. The email you've entered may have been blacklisted or already invited previously. If you accidentally applied through a wrong college before, mail us at support@workfra.me",
 									nofix: false
 								});
 							} else {
