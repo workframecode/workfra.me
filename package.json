@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/workframecode/workfra.me/issues"
   },
-  "homepage": "https://workfra.me",
+  "homepage": "https://workframe.arvind.io",
   "dependencies": {
     "body-parser": "^1.16.0",
     "express": "^4.14.1",

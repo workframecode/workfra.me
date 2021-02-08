@@ -68,6 +68,10 @@ body, html{
     max-width: 1000px;
     margin: 0 auto;
 }
+.section h1{
+    color: #aa0000;
+    font-weight: 600;
+}
 .subtext{
     font-size: 0.8em;
 }
